@@ -1,0 +1,15 @@
+#!/bin/sh
+# 낌새 pre-commit — ① tools/ 가 바뀌면 테스트 전부 통과해야 커밋 ② 생성물(목록·sitemap·feed)이 posts.json과 어긋나면 커밋 중단
+# 설치: sh tools/hooks/install.sh  (git config core.hooksPath tools/hooks)
+if git diff --cached --name-only | grep -qE '^tools/'; then
+  echo "[pre-commit] 도구 테스트 실행..."
+  if ! node --test "tools/test/*.test.js" >tools/test.log 2>&1; then
+    echo "[pre-commit] 테스트 실패 — 커밋 중단. 로그: tools/test.log"
+    grep -E "^not ok|Error" tools/test.log | head -10
+    exit 1
+  fi
+  echo "[pre-commit] 테스트 통과"
+fi
+if ! node tools/buildlist.js --check; then
+  exit 1
+fi

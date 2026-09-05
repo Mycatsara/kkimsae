@@ -1,0 +1,4 @@
+{
+  "_읽는법": "글 목록의 단일 소스. publish.js가 채운다(손으로 고칠 땐 date 내림차순 무관 — buildlist가 정렬). 항목: slug, category(money|season|game|daily), date, modified(수정 시), title, description, tags, image{src,w,h}, related(선택: 이어서 읽을 글 슬러그). 고친 뒤 `node tools/buildlist.js`.",
+  "posts": []
+}

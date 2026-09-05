@@ -1,0 +1,125 @@
+/* ==========================================================
+   낌새(kkimsae.com) 디자인 — "메모지 + 형광펜", 주색 적갈색
+   규칙 원문: Documents/기록/낌새_디자인규칙.md (눈치 뼈대 + 색·아이콘만 다름)
+   색·모서리·그림자 값은 발명하지 않는다. 모서리 4/9/10/12/14/999만, 그림자 없음.
+   ========================================================== */
+:root{
+  --bg:#F5F1E8;        /* 페이지 배경: 미색 메모지 */
+  --ink:#1B1A17;       /* 제목·먹색 */
+  --paper:#FFFFFF;     /* 카드 */
+  --main:#8B3A2F;      /* 주색: 적갈색 — 링크·h2 왼쪽 선·날짜 점·태그 글자 */
+  --main-deep:#662A22;
+  --tagbg:#F5ECE9;     /* 카테고리·태그 칩 배경 */
+  --hl:#FFE86B;        /* 형광 노랑: 굵게 밑줄·메뉴 현재 항목·h3 점 */
+  --line:#E3DCCB;      /* 테두리·구분선 */
+  --sub:#5F5B52;       /* 보조 글자(날짜·라벨) — 배경 대비 5.6:1 */
+  --body:#33302A;      /* 본문 */
+  --quote:#FBF8EE;     /* 인용·코드 배경 */
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;font-size:15.5px;line-height:1.7}
+h1,h2,h3{font-weight:900;color:var(--ink);letter-spacing:-0.5px;line-height:1.35;margin:0}
+a{color:var(--main);text-decoration:none;transition:.15s}
+a:hover{color:var(--main-deep)}
+img{max-width:100%;height:auto}
+::selection{background:var(--hl);color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;left:-9999px}
+
+/* ---------- 머리(로고·메뉴) ---------- */
+header.site{border-bottom:1.5px solid var(--ink);padding:22px 0 0}
+.title{display:inline-flex;align-items:center;gap:7px;font-size:30px;font-weight:900;letter-spacing:-1px;color:var(--ink);line-height:1.2}
+.title:hover{color:var(--ink)}
+/* 로고 옆 귀 아이콘(9/5 운영자 선택) — 눈치의 두 눈과 짝. SVG를 데이터로 심어 기기마다 똑같이 보임 */
+.title::after{content:"";display:inline-block;width:34px;height:30px;margin-bottom:-2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 30'%3E%3Cpath d='M14 27c0-4 2-6 4-8 3-3 4-5 4-9a7 7 0 0 0-14 0' fill='%23fff' stroke='%231B1A17' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M13 12a4 4 0 0 1 6-3' fill='none' stroke='%231B1A17' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M28 8a9 9 0 0 1 0 14' fill='none' stroke='%238B3A2F' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M32 4a15 15 0 0 1 0 22' fill='none' stroke='%238B3A2F' stroke-width='2.2' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") no-repeat center/contain}
+.desc{font-size:13px;color:var(--sub);margin:2px 0 0}
+nav.menu{display:flex;flex-wrap:wrap;margin-top:6px}
+nav.menu a{color:var(--ink);font-size:14.5px;font-weight:700;line-height:48px;padding:0 13px}
+nav.menu a:first-child{padding-left:0}
+nav.menu a.on,nav.menu a:hover{color:var(--main);box-shadow:inset 0 -0.45em 0 var(--hl)}
+
+/* ---------- 글 목록(홈·카테고리) ---------- */
+main{padding-top:26px}
+.cathead{padding-bottom:14px;margin-bottom:14px;border-bottom:1.5px solid var(--ink)}
+.cathead h1{font-size:22px}
+.cathead h1::before{content:"#";color:var(--main);margin-right:4px}
+.cathead p{font-size:13.5px;color:var(--sub);margin:4px 0 0}
+.card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;margin-bottom:14px;color:var(--body)}
+.card:hover{border-color:var(--main);color:var(--body)}
+.card .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px}
+.card h2{font-size:20px;margin-bottom:6px}
+.card:hover h2{color:var(--main);box-shadow:inset 0 -0.35em 0 var(--hl)}
+.meta{font-size:12.5px;color:var(--sub);margin:0}
+.meta::before{content:"";display:inline-block;width:6px;height:6px;margin:0 6px 2px 0;background:var(--main);border-radius:999px}
+.card .excerpt{font-size:14.5px;margin:10px 0 8px}
+.more{font-size:13.5px;font-weight:700;color:var(--main)}
+.more::after{content:" →"}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:14px;padding:26px 22px;text-align:center;color:var(--sub);font-size:14.5px}
+
+/* ---------- 글·페이지 본문 ---------- */
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 24px 22px}
+.phead{margin-bottom:22px;padding-bottom:16px;border-bottom:1.5px dashed var(--line)}
+.phead h1{font-size:27px;line-height:1.3;margin:2px 0 8px}
+.phead .meta{margin-top:0}
+.chip{display:inline-block;font-size:12px;font-weight:700;color:var(--main);background:var(--tagbg);border-radius:4px;padding:2px 8px;margin:0 4px 6px 0}
+.body p{margin:0 0 1.35em}
+.body h2{font-size:20px;margin:44px 0 14px;padding-left:12px;border-left:4px solid var(--main)}
+.body h3{font-size:17px;font-weight:700;margin:30px 0 10px}
+.body h3::before{content:"";display:inline-block;width:.55em;height:.55em;margin:0 8px 2px 0;background:var(--hl);border:1.5px solid var(--ink)}
+.body strong{color:var(--ink);box-shadow:inset 0 -0.4em 0 var(--hl)}   /* 굵게 = 형광펜 */
+.body mark{background:var(--hl);color:var(--ink);padding:0 2px}
+.body a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.body ul,.body ol{margin:0 0 1.35em 1.3em;padding:0}
+.body li{margin-bottom:.35em}
+.body li::marker{color:var(--main);font-weight:700}
+.body blockquote{margin:22px 0;padding:14px 18px;border-left:4px solid var(--hl);background:var(--quote);border-radius:0 10px 10px 0;color:var(--ink)}
+.body blockquote p:last-child{margin-bottom:0}
+.body hr{border:0;border-top:1.5px dashed var(--line);margin:34px 0}
+.fig{margin:22px 0}
+.fig img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.fig figcaption{font-size:12.5px;color:var(--sub);text-align:center;margin-top:8px}
+.fig.hero{margin-top:0}
+.tblwrap{overflow-x:auto;margin:18px 0 24px}
+.body table{width:100%;border-collapse:collapse;font-size:14px;margin:0}
+.body th{font-size:12.5px;font-weight:700;color:var(--sub);text-align:left;padding:9px 6px;border-bottom:1.5px solid var(--ink)}
+.body td{padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.body td:last-child,.body th:last-child{text-align:right;white-space:nowrap}
+.body td:first-child,.body th:first-child{text-align:left}
+.body tr.total td{border-top:1.5px dashed var(--ink);font-weight:700;color:var(--ink)}
+.body code{background:var(--quote);border:1px solid var(--line);border-radius:4px;font-size:13.5px;padding:0 4px}
+.note{font-size:12.5px;color:var(--sub);margin:26px 0 0}
+.pfoot{margin-top:26px;padding-top:14px;border-top:1px solid var(--line)}
+.next{margin-top:22px;padding-top:16px;border-top:1.5px dashed var(--line)}
+.next h2{font-size:15px;margin-bottom:8px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{border-bottom:1px solid var(--line)}
+.plist li:last-child{border-bottom:0}
+.plist a{display:flex;justify-content:space-between;gap:12px;padding:10px 2px;color:var(--ink);font-size:14.5px;font-weight:700}
+.plist a:hover .t{color:var(--main);box-shadow:inset 0 -0.35em 0 var(--hl)}
+.plist .d{flex:none;font-size:12.5px;font-weight:400;color:var(--sub);align-self:center}
+.crumb{font-size:12.5px;color:var(--sub);margin:0 0 14px}
+.crumb a{color:var(--sub)}
+.crumb a:hover{color:var(--main)}
+.crumb span{margin:0 6px}
+
+/* ---------- 바닥 ---------- */
+footer.site{margin-top:48px;border-top:1.5px solid var(--ink);padding:22px 0 40px;text-align:center}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:13px;font-weight:700}
+.flinks a{color:var(--ink)}
+.flinks a:hover{color:var(--main);box-shadow:inset 0 -0.4em 0 var(--hl)}
+.copy{font-size:12.5px;color:var(--sub);margin:14px 0 0}
+
+/* ---------- 모바일 ---------- */
+@media (max-width:480px){
+  .title{font-size:26px}
+  .title::after{width:30px;height:26px}
+  nav.menu a{font-size:14px;padding:0 10px;line-height:44px}
+  .card{padding:18px 16px 14px;border-radius:12px}
+  .card h2{font-size:18px}
+  article{padding:20px 16px 18px;border-radius:12px}
+  .phead h1{font-size:23px}
+  .body h2{font-size:18.5px;margin-top:36px}
+  .body table{font-size:13px}
+  .body th,.body td{padding:8px 4px}
+}

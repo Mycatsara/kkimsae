@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>낌새</title>
+    <link>https://kkimsae.com/</link>
+    <description>미리 알아채는 블로그</description>
+    <language>ko</language>
+    <lastBuildDate>Sat, 05 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+  </channel>
+</rss>
