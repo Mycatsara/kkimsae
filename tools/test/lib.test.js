@@ -61,7 +61,7 @@ test("fmtDate·rfc822·postUrl", () => {
 
 test("카테고리: 한글 이름·슬러그 양쪽으로 찾기", () => {
   assert.equal(L.catByName("경제·금융").slug, "money");
-  assert.equal(L.catByName("season").name, "달력·시기");
+  assert.equal(L.catByName("season").name, "이맘때");
   assert.equal(L.catByName("없음"), undefined);
 });
 

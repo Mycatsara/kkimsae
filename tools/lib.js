@@ -21,9 +21,9 @@ const SITE = {
 // 카테고리 4개 — 폴더 이름(slug)이 주소가 된다: /money/글.html (9/6 운영자 결정: 이름은 낌새식으로, 주소는 유지)
 const CATS = [
   { slug: "money", name: "경제·금융", desc: "지원금, 수당, 세금, 요금. 해마다 다시 계산하게 되는 것" },
-  { slug: "season", name: "달력·시기", desc: "명절, 김장, 수능, 신청 기간. 날짜가 정해져 있어 미리 준비하면 편한 것" },
+  { slug: "season", name: "이맘때", desc: "설·추석, 수능, 세일, 신청 기간. 날짜가 정해져 있어 미리 준비하면 편한 것" },
   { slug: "game", name: "게임", desc: "정기 세일, 시즌 이벤트, 발매 일정. 놓치면 다음 해까지 기다려야 하는 것" },
-  { slug: "daily", name: "일상", desc: "난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것" },
+  { slug: "daily", name: "일상", desc: "김장, 난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것" },
 ];
 const catBySlug = (s) => CATS.find((c) => c.slug === s);
 const catByName = (n) => CATS.find((c) => c.name === n || c.slug === n);
