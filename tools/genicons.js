@@ -7,11 +7,11 @@ const L = require("./lib");
 const EAR = (stroke = "#1B1A17", main = "#8B3A2F") => `<path d="M14 27c0-4 2-6 4-8 3-3 4-5 4-9a7 7 0 0 0-14 0" fill="#fff" stroke="${stroke}" stroke-width="2.2" stroke-linecap="round"/><path d="M13 12a4 4 0 0 1 6-3" fill="none" stroke="${stroke}" stroke-width="1.8" stroke-linecap="round"/><path d="M28 8a9 9 0 0 1 0 14" fill="none" stroke="${main}" stroke-width="2.2" stroke-linecap="round"/><path d="M32 4a15 15 0 0 1 0 22" fill="none" stroke="${main}" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>`;
 
 // favicon: 미색 둥근 바탕 + 귀
-const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#F5F1E8"/><g transform="translate(1 5)">${EAR()}</g></svg>`;
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#ECEEE7"/><g transform="translate(1 5)">${EAR()}</g></svg>`;
 // og: 미색 바탕, 왼쪽 큰 귀, 오른쪽 사이트명(글자는 Malgun Gothic — 없으면 sans-serif)
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#F5F1E8"/>
-<rect x="60" y="60" width="1080" height="510" rx="28" fill="#FFFFFF" stroke="#E3DCCB" stroke-width="3"/>
+<rect width="1200" height="630" fill="#ECEEE7"/>
+<rect x="60" y="60" width="1080" height="510" rx="28" fill="#FFFFFF" stroke="#D9DDD0" stroke-width="3"/>
 <g transform="translate(150 175) scale(7)">${EAR()}</g>
 <text x="500" y="330" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="900" font-size="150" fill="#1B1A17" letter-spacing="-6">낌새</text>
 <rect x="500" y="352" width="300" height="26" fill="#FFE86B"/>
