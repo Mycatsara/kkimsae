@@ -15,7 +15,7 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
 <g transform="translate(150 175) scale(7)">${EAR()}</g>
 <text x="500" y="330" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="900" font-size="150" fill="#1B1A17" letter-spacing="-6">낌새</text>
 <rect x="500" y="352" width="300" height="26" fill="#FFE86B"/>
-<text x="500" y="440" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="700" font-size="44" fill="#5F5B52">미리 알아채는 블로그</text>
+<text x="500" y="440" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="700" font-size="44" fill="#5F5B52">해마다 다시 찾는 답</text>
 <text x="500" y="500" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="700" font-size="30" fill="#8B3A2F">kkimsae.com</text>
 </svg>`;
 

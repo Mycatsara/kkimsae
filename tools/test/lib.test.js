@@ -4,7 +4,7 @@ const assert = require("node:assert/strict");
 const L = require("../lib");
 
 test("parseFront: 머리말과 본문을 나누고 tags·images를 배열로", () => {
-  const { front, body } = L.parseFront("---\ntitle: 제목\nslug: a-b\ncategory: 돈·생활\ntags: 실업급여, 고용보험\nimages: img/a.webp, img/b.webp\ndescription: 설명\n---\n\n본문 첫 줄\n");
+  const { front, body } = L.parseFront("---\ntitle: 제목\nslug: a-b\ncategory: 경제·금융\ntags: 실업급여, 고용보험\nimages: img/a.webp, img/b.webp\ndescription: 설명\n---\n\n본문 첫 줄\n");
   assert.equal(front.title, "제목");
   assert.equal(front.slug, "a-b");
   assert.deepEqual(front.tags, ["실업급여", "고용보험"]);
@@ -60,8 +60,8 @@ test("fmtDate·rfc822·postUrl", () => {
 });
 
 test("카테고리: 한글 이름·슬러그 양쪽으로 찾기", () => {
-  assert.equal(L.catByName("돈·생활").slug, "money");
-  assert.equal(L.catByName("season").name, "시즌·일정");
+  assert.equal(L.catByName("경제·금융").slug, "money");
+  assert.equal(L.catByName("season").name, "달력·시기");
   assert.equal(L.catByName("없음"), undefined);
 });
 
@@ -84,7 +84,7 @@ test("postPage: 머리·JSON-LD·AUTO:NEXT 마커·수정일 표기", () => {
   assert.match(h, /"@type":"BreadcrumbList"/);
   assert.match(h, /2026년 9월 6일 게시 · 2026년 9월 10일 수정/);
   assert.match(h, /<!-- AUTO:NEXT:START -->\s*<!-- AUTO:NEXT:END -->/);
-  assert.match(h, /<a href="\/money\/" class="on">돈·생활<\/a>/);
+  assert.match(h, /<a href="\/money\/" class="on">경제·금융<\/a>/);
   assert.match(h, /G-DMKX2LWWTB/);
   assert.match(h, /google-site-verification/);
   assert.doesNotMatch(h, /noindex/);

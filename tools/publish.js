@@ -4,7 +4,7 @@
 //   node tools/publish.js <원고.md>                  게시 파일 생성 (커밋·푸시는 /publish 스킬 단계에서)
 //   node tools/publish.js <원고.md> --date 2026-09-06 게시일 지정(기본 오늘)
 //   node tools/publish.js <원고.md> --update         이미 게시된 글 수정 — 게시일 유지, 수정일 = 오늘
-// 원고 머리말: title, slug, category(돈·생활|시즌·일정|게임|일상), tags, description, images(원고 폴더 기준 상대경로)
+// 원고 머리말: title, slug, category(경제·금융|달력·시기|게임|일상 — 또는 슬러그 money|season|game|daily), tags, description, images(원고 폴더 기준 상대경로)
 // 이미지: PNG/JPG/WEBP → 폭 1200 webp(300KB 이하)로 압축해 /img/에 둔다(sharp). 원본은 원고 폴더(비공개)에 그대로.
 // 하루 상한: posts.json에 같은 게시일 글이 이미 2편이면 중단한다(우회 옵션 없음 — 날짜를 옮기려면 운영자 확인 후 --date).
 const fs = require("fs");
@@ -42,7 +42,7 @@ async function run() {
   const { front, body } = L.parseFront(fs.readFileSync(mdPath, "utf8"));
   for (const k of ["title", "slug", "category", "description"]) if (!front[k]) throw new Error(`머리말에 ${k}가 없습니다`);
   const cat = L.catByName(front.category);
-  if (!cat) throw new Error(`카테고리가 잘못됨: ${front.category} (돈·생활 / 시즌·일정 / 게임 / 일상)`);
+  if (!cat) throw new Error(`카테고리가 잘못됨: ${front.category} (${L.CATS.map((c) => c.name).join(" / ")})`);
   if (!/^[a-z0-9-]+$/.test(front.slug)) throw new Error(`slug는 영문 소문자·숫자·하이픈만: ${front.slug}`);
   if (front.description.length < 50 || front.description.length > 160) console.warn(`주의: description ${front.description.length}자 — 검색 결과용은 80~125자가 알맞다`);
 

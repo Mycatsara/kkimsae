@@ -9,7 +9,7 @@ const SITE = {
   name: "낌새",
   host: "kkimsae.com",
   url: "https://kkimsae.com",
-  tagline: "미리 알아채는 블로그",
+  tagline: "해마다 다시 찾는 답",
   email: "ydj00383@naver.com",
   ga: "G-DMKX2LWWTB",
   google: "Um4UH--ivJ-Jy4bCHmzmd6xOOJ6AHSTpz61yAmZcy60",
@@ -18,12 +18,12 @@ const SITE = {
   lang: "ko",
 };
 
-// 카테고리 4개 — 폴더 이름(slug)이 주소가 된다: /money/글.html
+// 카테고리 4개 — 폴더 이름(slug)이 주소가 된다: /money/글.html (9/6 운영자 결정: 이름은 낌새식으로, 주소는 유지)
 const CATS = [
-  { slug: "money", name: "돈·생활", desc: "지원금, 환급, 요금, 물가. 내 통장이랑 관계된 것" },
-  { slug: "season", name: "시즌·일정", desc: "명절, 행사, 신청 기간. 해마다 돌아오는 것" },
-  { slug: "game", name: "게임", desc: "신작, 업데이트, 이벤트. 지금 하고 있는 사람이 찾는 것" },
-  { slug: "daily", name: "일상", desc: "생활 요령, 계절 준비. 미리 알면 편한 것" },
+  { slug: "money", name: "경제·금융", desc: "지원금, 수당, 세금, 요금. 해마다 다시 계산하게 되는 것" },
+  { slug: "season", name: "달력·시기", desc: "명절, 김장, 수능, 신청 기간. 날짜가 정해져 있어 미리 준비하면 편한 것" },
+  { slug: "game", name: "게임", desc: "정기 세일, 시즌 이벤트, 발매 일정. 놓치면 다음 해까지 기다려야 하는 것" },
+  { slug: "daily", name: "일상", desc: "난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것" },
 ];
 const catBySlug = (s) => CATS.find((c) => c.slug === s);
 const catByName = (n) => CATS.find((c) => c.name === n || c.slug === n);
@@ -38,7 +38,7 @@ function fmtDate(iso) { const [y, m, d] = iso.split("-").map(Number); return `${
 function rfc822(iso) { return new Date(iso + "T09:00:00+09:00").toUTCString(); }
 
 // ---------- 원고 머리말 ----------
-// ---\ntitle: …\nslug: …\ncategory: 돈·생활\ntags: a, b\ndescription: …\nimages: img/a.webp, img/b.webp\n---
+// ---\ntitle: …\nslug: …\ncategory: 경제·금융\ntags: a, b\ndescription: …\nimages: img/a.webp, img/b.webp\n---
 function parseFront(md) {
   const m = md.replace(/^﻿/, "").match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!m) throw new Error("머리말(---)이 없습니다");

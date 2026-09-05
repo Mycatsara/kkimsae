@@ -21,7 +21,7 @@ ${L.footer()}
 // 홈
 L.write("index.html", shell({
   title: L.SITE.name,
-  description: "낌새는 곧 필요해질 것을 미리 알아채는 블로그입니다. 돈·생활, 시즌·일정, 게임, 일상 네 칸으로 해마다 돌아오는 검색을 한 걸음 먼저 정리합니다.",
+  description: "낌새는 해마다 같은 시기에 다시 검색되는 질문에 미리 답을 정리해 두는 블로그입니다. 경제·금융, 달력·시기, 게임, 일상 네 칸.",
   url: "/", active: "home",
   jsonld: [{ "@context": "https://schema.org", "@type": "WebSite", name: L.SITE.name, url: L.SITE.url + "/", description: L.SITE.tagline, inLanguage: "ko" }],
   body: `<h1 class="sr">${L.SITE.name} — ${L.SITE.tagline}</h1>
