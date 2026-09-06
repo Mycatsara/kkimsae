@@ -54,4 +54,7 @@ node tools/publish.js <원고.md> --update   # 이미 게시된 글 수정 (게�
 3. 운영자에게 보고: 게시 URL, readcheck 결과, IndexNow 응답 코드, 확인 못 한 것
 
 ## 페이지(소개·개인정보처리방침·연락) 고칠 때
-원고는 `원고대기/낌새/페이지_*.md`. 고친 뒤 `node tools/page.js <페이지.md>` → 커밋·푸시. 머리·바닥·메뉴 문구를 바꿨으면 `node tools/scaffold.js && node tools/buildlist.js`(홈·카테고리·404 재생성) 뒤 글 페이지는 `--update`로 다시 만든다.
+원고는 `원고대기/낌새/페이지_*.md`. 고친 뒤 `node tools/page.js <페이지.md>` → 커밋·푸시.
+
+## 틀(머리·메뉴·사이드바·바닥·CSS 구조)을 바꿨을 때
+1. `node tools/scaffold.js` (홈·카테고리 4·검색·404·robots 재생성) → 2. 글마다 `node tools/publish.js 원고완료/낌새/<원고>.md --rebuild` (게시일·수정일 유지, `--update`는 수정일이 바뀌니 내용 수정 때만) → 3. `node tools/buildlist.js` → 4. 페이지 3종 `page.js` → 5. 로컬 375·1280 확인 → 커밋·푸시. 옛 틀 글이 남아 있으면 buildlist가 "AUTO:SIDE 마커가 없음" 주의를 낸다.

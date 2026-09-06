@@ -2,7 +2,8 @@
 //   1) index.html            : 홈 최신 글 카드 (AUTO:HOME)
 //   2) {category}/index.html : 카테고리별 글 카드 전체 (AUTO:LIST)
 //   3) 각 글 .html           : 글 하단 "이어서 읽을 글" 3편 (AUTO:NEXT)
-//   4) sitemap.xml · feed.xml: 전체 생성
+//   4) 홈·카테고리·글의 사이드바(최근 글·카테고리 편수·검색) (AUTO:SIDE)
+//   5) sitemap.xml · feed.xml · search.json: 전체 생성
 // 사용: node tools/buildlist.js          갱신
 //       node tools/buildlist.js --check  갱신할 게 남아 있으면 실패(pre-commit 훅용 — 생성물 안 커밋하는 사고 방지)
 // 규칙: AUTO 마커 사이만 바뀐다. 그 밖은 손대지 않는다.
@@ -13,10 +14,10 @@ const L = require("./lib");
 const HOME_MAX = 10;
 const NEXT_MAX = 3;
 
-function fill(file, name, inner, check) {
+function fill(file, name, inner, check, optional = false) {
   const s = L.read(file);
   const re = new RegExp(`(<!-- AUTO:${name}:START -->)[\\s\\S]*?(<!-- AUTO:${name}:END -->)`);
-  if (!re.test(s)) throw new Error(`${file}: AUTO:${name} 마커가 없습니다`);
+  if (!re.test(s)) { if (optional) { console.warn(`주의: ${file}에 AUTO:${name} 마커가 없음 — 옛 틀. node tools/publish.js <원고> --rebuild 로 다시 만들 것`); return false; } throw new Error(`${file}: AUTO:${name} 마커가 없습니다`); }
   const next = s.replace(re, `$1\n${inner}\n$2`);
   if (next === s) return false;
   if (!check) L.write(file, next);
@@ -112,17 +113,24 @@ function build({ check = false } = {}) {
   const changedFiles = [];
   const mark = (f, did) => { if (did) { changed++; changedFiles.push(f); } };
 
+  const side = L.sidebar(posts);
   mark("index.html", fill("index.html", "HOME", posts.length ? posts.slice(0, HOME_MAX).map(L.card).join("\n") : EMPTY, check));
+  mark("index.html", fill("index.html", "SIDE", side, check));
+  if (L.exists("search.html")) mark("search.html", fill("search.html", "SIDE", side, check, true));
   for (const c of L.CATS) {
     const mine = posts.filter((p) => p.category === c.slug);
     mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "LIST", mine.length ? mine.map(L.card).join("\n") : EMPTY, check));
+    mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "SIDE", side, check));
   }
   for (const p of posts) {
     const f = `${p.category}/${p.slug}.html`;
     mark(f, fill(f, "NEXT", L.nextBlock(related(p, posts)), check));
+    mark(f, fill(f, "SIDE", side, check, true));
   }
   mark("sitemap.xml", put("sitemap.xml", sitemap(posts), check));
   mark("feed.xml", put("feed.xml", feed(posts), check));
+  // 검색 페이지가 읽는 색인(제목·설명·태그·주소·날짜·카테고리)
+  mark("search.json", put("search.json", JSON.stringify(posts.map((p) => ({ t: p.title, d: p.description, g: (p.tags || []).join(" "), u: L.postUrl(p), dt: p.date, c: L.catBySlug(p.category).name, i: p.image ? p.image.src : "" }))) + "\n", check));
   return { posts: posts.length, changed, changedFiles };
 }
 

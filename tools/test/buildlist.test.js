@@ -56,7 +56,8 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   const order = ["/money/new.html", "/game/g.html", "/money/old.html"].map((u) => home.indexOf(u));
   assert.ok(order[0] < order[1] && order[1] < order[2], "홈은 최신순");
   assert.match(home, /<img class="thumb" src="\/img\/new-01.webp"/);
-  const money = fs.readFileSync(path.join(root, "money/index.html"), "utf8");
+  const moneyAll = fs.readFileSync(path.join(root, "money/index.html"), "utf8");
+  const money = moneyAll.slice(moneyAll.indexOf("AUTO:LIST:START"), moneyAll.indexOf("AUTO:LIST:END"));
   assert.match(money, /\/money\/new.html/); assert.match(money, /\/money\/old.html/); assert.doesNotMatch(money, /\/game\/g.html/);
   assert.match(fs.readFileSync(path.join(root, "daily/index.html"), "utf8"), /아직 글이 없습니다/);
   // 관련 글: old 글에는 같은 카테고리 new가 먼저, 그 다음 g
@@ -69,6 +70,16 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   const feed = fs.readFileSync(path.join(root, "feed.xml"), "utf8");
   assert.match(feed, /<title>새 글<\/title>/);
   assert.ok(feed.indexOf("새 글") < feed.indexOf("게임 글"));
+  // 사이드바: 홈·카테고리·글 모두에 최근 글 3개와 카테고리 편수
+  for (const f of ["index.html", "game/index.html", "money/old.html"]) {
+    const s = fs.readFileSync(path.join(root, f), "utf8");
+    const side = s.slice(s.indexOf("AUTO:SIDE:START"), s.indexOf("AUTO:SIDE:END"));
+    assert.match(side, /최근 글/); assert.equal((side.match(/<li><a href="\/(money|game)\/[a-z]+\.html">/g) || []).length, 3, f);
+    assert.match(side, /경제·금융 <span class="n">\(2\)<\/span>/); assert.match(side, /게임 <span class="n">\(1\)<\/span>/);
+  }
+  const sj = JSON.parse(fs.readFileSync(path.join(root, "search.json"), "utf8"));
+  assert.equal(sj.length, 3); assert.equal(sj[0].u, "/money/new.html"); assert.equal(sj[0].c, "경제·금융");
+  assert.ok(fs.existsSync(path.join(root, "search.html")));
   // 두 번째 실행은 변화 없음, --check 통과
   assert.match(run(env).out, /갱신된 파일 0개/);
   assert.equal(run(env, ["--check"]).code, 0);

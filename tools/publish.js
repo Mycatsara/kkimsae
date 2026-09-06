@@ -4,6 +4,7 @@
 //   node tools/publish.js <원고.md>                  게시 파일 생성 (커밋·푸시는 /publish 스킬 단계에서)
 //   node tools/publish.js <원고.md> --date 2026-09-06 게시일 지정(기본 오늘)
 //   node tools/publish.js <원고.md> --update         이미 게시된 글 수정 — 게시일 유지, 수정일 = 오늘
+//   node tools/publish.js <원고.md> --rebuild        틀(머리·사이드바 등)만 바뀐 뒤 HTML 재생성 — 게시일·수정일 모두 유지
 // 원고 머리말: title, slug, category(경제·금융|이맘때|게임|일상 — 또는 슬러그 money|season|game|daily), tags, description, images(원고 폴더 기준 상대경로)
 // 이미지: PNG/JPG/WEBP → 폭 1200 webp(300KB 이하)로 압축해 /img/에 둔다(sharp). 원본은 원고 폴더(비공개)에 그대로.
 // 하루 상한: posts.json에 같은 게시일 글이 이미 2편이면 중단한다(우회 옵션 없음 — 날짜를 옮기려면 운영자 확인 후 --date).
@@ -38,7 +39,8 @@ async function run() {
   const mdPath = process.argv[2];
   if (!mdPath || mdPath.startsWith("--")) { console.log("사용법: node tools/publish.js <원고.md> [--dry] [--date YYYY-MM-DD] [--update]"); process.exit(1); }
   const dry = process.argv.includes("--dry");
-  const update = process.argv.includes("--update");
+  const rebuild = process.argv.includes("--rebuild");
+  const update = process.argv.includes("--update") || rebuild;
   const { front, body } = L.parseFront(fs.readFileSync(mdPath, "utf8"));
   for (const k of ["title", "slug", "category", "description"]) if (!front[k]) throw new Error(`머리말에 ${k}가 없습니다`);
   const cat = L.catByName(front.category);
@@ -53,7 +55,7 @@ async function run() {
 
   const date = update ? existing.date : arg("--date") || L.today();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`날짜 형식 오류: ${date}`);
-  const modified = update ? L.today() : undefined;
+  const modified = rebuild ? existing.modified : update ? L.today() : undefined;
 
   // 하루 상한 (새 글만)
   if (!update) {

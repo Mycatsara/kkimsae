@@ -65,13 +65,34 @@ test("카테고리: 한글 이름·슬러그 양쪽으로 찾기", () => {
   assert.equal(L.catByName("없음"), undefined);
 });
 
-test("card: 대표 이미지·제목·날짜·카테고리·설명·더 읽기", () => {
+test("card: 대표 이미지 → 제목 → 날짜 → 설명 → 카테고리 칩", () => {
   const h = L.card({ slug: "a", category: "game", date: "2026-09-06", title: "제목 <b>", description: "설명", image: { src: "/img/a-01.webp", w: 1200, h: 675 } });
   assert.match(h, /^<a class="card" href="\/game\/a.html">/);
   assert.match(h, /<img class="thumb" src="\/img\/a-01.webp" width="1200" height="675" alt="" loading="lazy"/);
   assert.match(h, /<h2>제목 &lt;b&gt;<\/h2>/);
-  assert.match(h, /<time datetime="2026-09-06">2026년 9월 6일<\/time> · 게임/);
-  assert.match(h, /<span class="more">더 읽기<\/span>/);
+  assert.match(h, /<time datetime="2026-09-06">2026년 9월 6일<\/time>/);
+  assert.match(h, /<span class="chip">게임<\/span>\s*<\/a>$/);
+});
+
+test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개·개인정보처리방침·연락), 바닥에 RSS 링크 없음", () => {
+  const h = L.header("privacy");
+  assert.match(h, /<details class="dd" open><summary class="on">소개<\/summary>/);
+  assert.match(h, /<a href="\/privacy.html" class="on">개인정보처리방침<\/a>/);
+  assert.match(h, /<a href="\/money\/">경제·금융<\/a>/);
+  const f = L.footer();
+  assert.doesNotMatch(f, /feed\.xml|RSS/);
+  assert.match(f, /개인정보처리방침/);
+});
+
+test("sidebar: 최근 글 6개·카테고리 편수·검색 폼", () => {
+  const posts = Array.from({ length: 8 }, (_, i) => ({ slug: "p" + i, category: i % 2 ? "money" : "daily", date: "2026-09-0" + (9 - i), title: "글" + i, description: "d", image: i ? { src: "/img/p.webp", w: 1200, h: 675 } : undefined }));
+  const s = L.sidebar(posts);
+  assert.equal((s.match(/<li><a href="\/(money|daily)\/p\d\.html">/g) || []).length, 6);
+  assert.match(s, /<span class="noimg"><\/span>/);
+  assert.match(s, /경제·금융 <span class="n">\(4\)<\/span>/);
+  assert.match(s, /이맘때 <span class="n">\(0\)<\/span>/);
+  assert.match(s, /<form class="search" action="\/search.html" method="get">/);
+  assert.match(L.sidebar([]), /아직 글이 없습니다/);
 });
 
 test("postPage: 머리·JSON-LD·AUTO:NEXT 마커·수정일 표기", () => {
@@ -84,6 +105,7 @@ test("postPage: 머리·JSON-LD·AUTO:NEXT 마커·수정일 표기", () => {
   assert.match(h, /"@type":"BreadcrumbList"/);
   assert.match(h, /2026년 9월 6일 게시 · 2026년 9월 10일 수정/);
   assert.match(h, /<!-- AUTO:NEXT:START -->\s*<!-- AUTO:NEXT:END -->/);
+  assert.match(h, /<aside class="side">\s*<!-- AUTO:SIDE:START -->\s*<!-- AUTO:SIDE:END -->/);
   assert.match(h, /<a href="\/money\/" class="on">경제·금융<\/a>/);
   assert.match(h, /G-DMKX2LWWTB/);
   assert.match(h, /google-site-verification/);

@@ -163,36 +163,65 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 </head>`;
 }
 
+// 머리: 왼쪽 제목·태그라인, 오른쪽 메뉴(카테고리 4 + "소개" 펼침 메뉴에 소개·개인정보처리방침·연락) — 9/6 운영자 요청(눈치 홈과 같은 배치)
+const INFO_PAGES = [{ href: "/about.html", slug: "about", name: "소개" }, { href: "/privacy.html", slug: "privacy", name: "개인정보처리방침" }, { href: "/contact.html", slug: "contact", name: "연락" }];
 function header(active = "") {
-  const nav = [{ href: "/", slug: "home", name: "홈" }]
-    .concat(CATS.map((c) => ({ href: `/${c.slug}/`, slug: c.slug, name: c.name })))
-    .concat([{ href: "/about.html", slug: "about", name: "소개" }]);
+  const cats = CATS.map((c) => `<a href="/${c.slug}/"${c.slug === active ? ' class="on"' : ""}>${c.name}</a>`).join("");
+  const infoOn = INFO_PAGES.some((p) => p.slug === active);
+  const info = `<details class="dd"${infoOn ? " open" : ""}><summary${infoOn ? ' class="on"' : ""}>소개</summary><div class="dd-menu">${INFO_PAGES.map((p) => `<a href="${p.href}"${p.slug === active ? ' class="on"' : ""}>${p.name}</a>`).join("")}</div></details>`;
   return `<header class="site">
-  <a class="title" href="/">${SITE.name}</a>
-  <p class="desc">${SITE.tagline}</p>
-  <nav class="menu" aria-label="주요 메뉴">${nav.map((n) => `<a href="${n.href}"${n.slug === active ? ' class="on"' : ""}>${n.name}</a>`).join("")}</nav>
+  <div class="brand"><a class="title" href="/">${SITE.name}</a><p class="desc">${SITE.tagline}</p></div>
+  <nav class="menu" aria-label="주요 메뉴">${cats}${info}</nav>
 </header>`;
 }
 
 function footer() {
   return `<footer class="site">
-  <div class="flinks"><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/contact.html">연락</a><a href="/feed.xml">RSS</a></div>
+  <div class="flinks">${INFO_PAGES.map((p) => `<a href="${p.href}">${p.name}</a>`).join("")}</div>
   <p class="copy">© 2026 ${SITE.name} · ${SITE.tagline}</p>
 </footer>`;
 }
 
 const postUrl = (p) => `/${p.category}/${p.slug}.html`;
 
-// 목록 카드 (홈·카테고리)
+// 목록 카드 (홈·카테고리·검색): 이미지 → 제목 → 날짜 → 발췌 3줄 → 카테고리 칩
 function card(p) {
   const cat = catBySlug(p.category);
   const thumb = p.image ? `\n  <img class="thumb" src="${esc(p.image.src)}" width="${p.image.w}" height="${p.image.h}" alt="" loading="lazy" decoding="async">` : "";
   return `<a class="card" href="${postUrl(p)}">${thumb}
   <h2>${esc(p.title)}</h2>
-  <p class="meta"><time datetime="${p.date}">${fmtDate(p.date)}</time> · ${esc(cat.name)}</p>
+  <p class="meta"><time datetime="${p.date}">${fmtDate(p.date)}</time></p>
   <p class="excerpt">${esc(p.description)}</p>
-  <span class="more">더 읽기</span>
+  <span class="chip">${esc(cat.name)}</span>
 </a>`;
+}
+
+// 사이드바 (홈·카테고리·글): 최근 글 6 · 카테고리(편수) · 검색. 내용은 buildlist가 AUTO:SIDE 사이에 채운다
+function sidebarShell() {
+  return `<aside class="side">
+<!-- AUTO:SIDE:START -->
+<!-- AUTO:SIDE:END -->
+</aside>`;
+}
+function sidebar(posts) {
+  const recent = posts.slice(0, 6).map((p) => `      <li><a href="${postUrl(p)}">${p.image ? `<img src="${esc(p.image.src)}" width="56" height="56" alt="" loading="lazy" decoding="async">` : `<span class="noimg"></span>`}<span><span class="t">${esc(p.title)}</span><span class="d">${fmtDate(p.date)}</span></span></a></li>`).join("\n");
+  const cats = CATS.map((c) => { const n = posts.filter((p) => p.category === c.slug).length; return `      <li><a href="/${c.slug}/">${esc(c.name)} <span class="n">(${n})</span></a></li>`; }).join("\n");
+  return `<div class="widget">
+  <h3>최근 글</h3>
+  <ul class="recent">
+${recent || '      <li class="none">아직 글이 없습니다</li>'}
+  </ul>
+</div>
+<div class="widget">
+  <h3>카테고리</h3>
+  <ul class="cats">
+${cats}
+  </ul>
+</div>
+<div class="widget">
+  <h3>검색</h3>
+  <form class="search" action="/search.html" method="get"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+</div>`;
 }
 
 // 글 하단 "이어서 읽을 글"
@@ -233,6 +262,7 @@ function postPage(p, bodyHtml) {
 <body>
 <div class="wrap">
 ${header(cat.slug)}
+<div class="layout">
 <main>
 <article>
   <p class="crumb"><a href="/">홈</a><span>›</span><a href="/${cat.slug}/">${esc(cat.name)}</a></p>
@@ -249,6 +279,8 @@ ${bodyHtml}
   <!-- AUTO:NEXT:END -->
 </article>
 </main>
+${sidebarShell()}
+</div>
 ${footer()}
 </div>
 </body>
@@ -256,14 +288,14 @@ ${footer()}
 `;
 }
 
-// 소개·개인정보처리방침·연락 같은 페이지
+// 소개·개인정보처리방침·연락 같은 페이지 (사이드바 없음, 본문 760px)
 function pagePage({ title, description, slug, noindex = false }, bodyHtml, active = "") {
   const url = `/${slug}.html`;
   return `${head({ title, description, url, noindex })}
 <body>
 <div class="wrap">
-${header(active)}
-<main>
+${header(active || slug)}
+<main class="narrow">
 <article class="page">
   <div class="phead"><h1>${esc(title)}</h1></div>
   <div class="body">
@@ -278,4 +310,4 @@ ${footer()}
 `;
 }
 
-module.exports = { ROOT, SITE, CATS, catBySlug, catByName, esc, read, write, exists, today, fmtDate, rfc822, parseFront, inline, mdToHtml, webpSize, head, header, footer, postUrl, card, nextBlock, postPage, pagePage };
+module.exports = { ROOT, SITE, CATS, INFO_PAGES, catBySlug, catByName, esc, read, write, exists, today, fmtDate, rfc822, parseFront, inline, mdToHtml, webpSize, head, header, footer, postUrl, card, nextBlock, sidebarShell, sidebar, postPage, pagePage };

@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>일상 — 낌새</title>
-<meta name="description" content="일상 — 김장, 난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것. 낌새의 일상 글 모음.">
-<link rel="canonical" href="https://kkimsae.com/daily/">
+<title>검색 — 낌새</title>
+<meta name="description" content="낌새 글 검색">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://kkimsae.com/search.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="낌새">
-<meta property="og:title" content="일상">
-<meta property="og:description" content="일상 — 김장, 난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것. 낌새의 일상 글 모음.">
-<meta property="og:url" content="https://kkimsae.com/daily/">
+<meta property="og:title" content="검색">
+<meta property="og:description" content="낌새 글 검색">
+<meta property="og:url" content="https://kkimsae.com/search.html">
 <meta property="og:image" content="https://kkimsae.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://kkimsae.com/"},{"@type":"ListItem","position":2,"name":"일상","item":"https://kkimsae.com/daily/"}]}</script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMKX2LWWTB"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DMKX2LWWTB');</script>
 </head>
@@ -32,22 +33,29 @@
 <div class="wrap">
 <header class="site">
   <div class="brand"><a class="title" href="/">낌새</a><p class="desc">해마다 다시 찾는 답</p></div>
-  <nav class="menu" aria-label="주요 메뉴"><a href="/money/">경제·금융</a><a href="/season/">이맘때</a><a href="/game/">게임</a><a href="/daily/" class="on">일상</a><details class="dd"><summary>소개</summary><div class="dd-menu"><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/contact.html">연락</a></div></details></nav>
+  <nav class="menu" aria-label="주요 메뉴"><a href="/money/">경제·금융</a><a href="/season/">이맘때</a><a href="/game/">게임</a><a href="/daily/">일상</a><details class="dd"><summary>소개</summary><div class="dd-menu"><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/contact.html">연락</a></div></details></nav>
 </header>
 <div class="layout">
 <main>
-<div class="cathead"><h1>일상</h1><p>김장, 난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것</p></div>
-<div class="cards">
-<!-- AUTO:LIST:START -->
-<a class="card" href="/daily/pickled-cabbage-20kg.html">
-  <img class="thumb" src="/img/pickled-cabbage-20kg-01.webp" width="1200" height="686" alt="" loading="lazy" decoding="async">
-  <h2>절임배추 20kg은 몇 포기, 몇 인분인가 — 주문 시기와 받은 뒤 할 일</h2>
-  <p class="meta"><time datetime="2026-09-06">2026년 9월 6일</time></p>
-  <p class="excerpt">절임배추 20kg은 보통 6~10포기, 4인 가족 한 번 김장 양이다. 마트 사전예약과 산지 직구의 주문 시기, 받은 날 바로 써야 하는 이유와 세척 횟수까지 정리했다.</p>
-  <span class="chip">일상</span>
-</a>
-<!-- AUTO:LIST:END -->
-</div>
+<div class="cathead"><h1 id="sq">검색</h1><p id="scount"></p></div>
+<div class="cards" id="sres"></div>
+<script>
+(function(){
+  var q=(new URLSearchParams(location.search).get('q')||'').trim();
+  var h=document.getElementById('sq'),c=document.getElementById('scount'),box=document.getElementById('sres');
+  document.addEventListener('DOMContentLoaded',function(){var inp=document.querySelector('.side input[name=q]'); if(inp) inp.value=q;});
+  if(!q){h.textContent='검색';c.textContent='오른쪽 검색창에 찾는 말을 넣어 주세요.';return;}
+  h.textContent='"'+q+'" 검색 결과';
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
+  var fmt=function(d){var a=d.split('-');return a[0]+'년 '+Number(a[1])+'월 '+Number(a[2])+'일';};
+  fetch('/search.json').then(function(r){return r.json();}).then(function(list){
+    var words=q.toLowerCase().split(/\s+/).filter(Boolean);
+    var hit=list.filter(function(p){var t=(p.t+' '+p.d+' '+p.g+' '+p.c).toLowerCase();return words.every(function(w){return t.indexOf(w)>-1;});});
+    c.textContent=hit.length?hit.length+'편':'맞는 글이 없습니다. 다른 말로 찾아보세요.';
+    box.innerHTML=hit.map(function(p){return '<a class="card" href="'+esc(p.u)+'">'+(p.i?'<img class="thumb" src="'+esc(p.i)+'" alt="" loading="lazy">':'')+'<h2>'+esc(p.t)+'</h2><p class="meta"><time>'+fmt(p.dt)+'</time></p><p class="excerpt">'+esc(p.d)+'</p><span class="chip">'+esc(p.c)+'</span></a>';}).join('');
+  }).catch(function(){c.textContent='검색 자료를 불러오지 못했습니다.';});
+})();
+</script>
 </main>
 <aside class="side">
 <!-- AUTO:SIDE:START -->

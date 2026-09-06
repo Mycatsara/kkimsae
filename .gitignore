@@ -6,6 +6,7 @@
 !/*.html
 !/*.txt
 !/*.xml
+!/search.json
 !/favicon.svg
 !/favicon.png
 !/og.png

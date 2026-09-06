@@ -24,20 +24,61 @@ a{color:var(--main);text-decoration:none;transition:.15s}
 a:hover{color:var(--main-deep)}
 img{max-width:100%;height:auto}
 ::selection{background:var(--hl);color:var(--ink)}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}   /* 9/6: 눈치와 같은 1040 (본문 약 700 + 사이드바 300) */
 .sr{position:absolute;left:-9999px}
+main.narrow{max-width:760px;margin:0 auto}                 /* 소개·개인정보·연락·404는 사이드바 없이 좁게 */
+
+/* ---------- 본문 + 사이드바 2단 ---------- */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start;padding-top:26px}
+.layout>main{padding-top:0;min-width:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.cards .card{margin-bottom:0;display:flex;flex-direction:column;height:100%}
+.cards .card h2{font-size:17px;line-height:1.35}
+.cards .card .excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.cards .card .chip{align-self:flex-start;margin:0}
+.cards .empty{grid-column:1/-1}
+.side .widget{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px;font-size:14px}
+.side .widget h3{font-size:14px;font-weight:900;margin:0 0 10px;padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
+.side ul{list-style:none;margin:0;padding:0}
+.side .recent li{padding:7px 0;border-bottom:1px solid var(--line)}
+.side .recent li:last-child{border-bottom:0}
+.side .recent a{display:flex;gap:10px;align-items:flex-start;color:var(--ink)}
+.side .recent img,.side .recent .noimg{flex:0 0 56px;width:56px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:var(--quote)}
+.side .recent .t{display:block;font-size:13.5px;font-weight:700;line-height:1.35}
+.side .recent a:hover .t{color:var(--main)}
+.side .recent .d{display:block;font-size:11.5px;color:var(--sub);margin-top:2px}
+.side .cats li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.side .cats li:last-child{border-bottom:0}
+.side .cats a{color:var(--ink);font-weight:700}
+.side .cats a:hover{color:var(--main)}
+.side .cats .n{color:var(--sub);font-weight:400}
+.side .none{color:var(--sub);font-size:13px}
+.search{display:flex;gap:6px}
+.search input{flex:1;min-width:0;font-family:inherit;font-size:14.5px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper);color:var(--ink)}
+.search input:focus{border-color:var(--main);outline:0}
+.search button{background:var(--ink);color:#fff;border:0;border-radius:10px;padding:0 16px;font-weight:700;font-family:inherit;font-size:14px;cursor:pointer}
+.search button:hover{background:var(--main)}
 
 /* ---------- 머리(로고·메뉴) ---------- */
-header.site{border-bottom:1.5px solid var(--ink);padding:22px 0 0}
+header.site{border-bottom:1.5px solid var(--ink);padding:22px 0 0;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.brand{padding-bottom:10px}
 .title{display:inline-flex;align-items:center;gap:7px;font-size:30px;font-weight:900;letter-spacing:-1px;color:var(--ink);line-height:1.2}
 .title:hover{color:var(--ink)}
 /* 로고 옆 귀 아이콘(9/5 운영자 선택) — 눈치의 두 눈과 짝. SVG를 데이터로 심어 기기마다 똑같이 보임 */
 .title::after{content:"";display:inline-block;width:34px;height:30px;margin-bottom:-2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 30'%3E%3Cpath d='M14 27c0-4 2-6 4-8 3-3 4-5 4-9a7 7 0 0 0-14 0' fill='%23fff' stroke='%231B1A17' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M13 12a4 4 0 0 1 6-3' fill='none' stroke='%231B1A17' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M28 8a9 9 0 0 1 0 14' fill='none' stroke='%238B3A2F' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M32 4a15 15 0 0 1 0 22' fill='none' stroke='%238B3A2F' stroke-width='2.2' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") no-repeat center/contain}
 .desc{font-size:13px;color:var(--sub);margin:2px 0 0}
-nav.menu{display:flex;flex-wrap:wrap;margin-top:6px}
-nav.menu a{color:var(--ink);font-size:14.5px;font-weight:700;line-height:48px;padding:0 13px}
-nav.menu a:first-child{padding-left:0}
-nav.menu a.on,nav.menu a:hover{color:var(--main);box-shadow:inset 0 -0.45em 0 var(--hl)}
+nav.menu{display:flex;flex-wrap:wrap;align-items:center}
+nav.menu a,nav.menu summary{color:var(--ink);font-size:14.5px;font-weight:700;line-height:48px;padding:0 13px;cursor:pointer;list-style:none}
+nav.menu>a:last-child{padding-right:0}
+nav.menu a.on,nav.menu a:hover,nav.menu summary.on,nav.menu summary:hover{color:var(--main);box-shadow:inset 0 -0.45em 0 var(--hl)}
+/* "소개" 펼침 메뉴: 소개·개인정보처리방침·연락 */
+.dd{position:relative}
+.dd summary::-webkit-details-marker{display:none}
+.dd summary::after{content:"";display:inline-block;width:6px;height:6px;margin:0 0 3px 6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+.dd[open] summary::after{transform:rotate(-135deg);margin-bottom:-1px}
+.dd-menu{position:absolute;right:0;top:100%;z-index:5;min-width:170px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 0;display:flex;flex-direction:column}
+.dd-menu a{line-height:38px;padding:0 16px;font-size:14px;box-shadow:none}
+.dd-menu a.on,.dd-menu a:hover{color:var(--main);background:var(--quote);box-shadow:none}
 
 /* ---------- 글 목록(홈·카테고리) ---------- */
 main{padding-top:26px}
@@ -111,6 +152,17 @@ footer.site{margin-top:48px;border-top:1.5px solid var(--ink);padding:22px 0 40p
 .copy{font-size:12.5px;color:var(--sub);margin:14px 0 0}
 
 /* ---------- 모바일 ---------- */
+@media (max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .side{margin-top:14px}
+  header.site{align-items:flex-start}
+  .brand{width:100%;padding-bottom:0}
+  nav.menu a,nav.menu summary{line-height:44px;padding:0 10px}
+  nav.menu>a:first-child{padding-left:0}
+  .dd-menu{position:static;border:0;padding:0 0 6px 10px;background:transparent}
+  .dd-menu a{line-height:36px;padding:0 6px}
+}
 @media (max-width:480px){
   .title{font-size:26px}
   .title::after{width:30px;height:26px}
