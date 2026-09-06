@@ -78,7 +78,8 @@ test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개�
   const h = L.header("privacy");
   assert.match(h, /<details class="dd" open><summary class="on">소개<\/summary>/);
   assert.match(h, /<a href="\/privacy.html" class="on">개인정보처리방침<\/a>/);
-  assert.match(h, /<a href="\/money\/">경제·금융<\/a>/);
+  assert.match(h, /<a href="\/">홈<\/a><a href="\/money\/">경제·금융<\/a>/);
+  assert.match(L.header("home"), /<a href="\/" class="on">홈<\/a>/);
   const f = L.footer();
   assert.doesNotMatch(f, /feed\.xml|RSS|<a /);
   assert.match(f, /© 2026 낌새/);

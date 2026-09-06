@@ -166,7 +166,7 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 // 머리: 왼쪽 제목·태그라인, 오른쪽 메뉴(카테고리 4 + "소개" 펼침 메뉴에 소개·개인정보처리방침·연락) — 9/6 운영자 요청(눈치 홈과 같은 배치)
 const INFO_PAGES = [{ href: "/about.html", slug: "about", name: "소개" }, { href: "/privacy.html", slug: "privacy", name: "개인정보처리방침" }, { href: "/contact.html", slug: "contact", name: "연락" }];
 function header(active = "") {
-  const cats = CATS.map((c) => `<a href="/${c.slug}/"${c.slug === active ? ' class="on"' : ""}>${c.name}</a>`).join("");
+  const cats = `<a href="/"${active === "home" ? ' class="on"' : ""}>홈</a>` + CATS.map((c) => `<a href="/${c.slug}/"${c.slug === active ? ' class="on"' : ""}>${c.name}</a>`).join("");
   const infoOn = INFO_PAGES.some((p) => p.slug === active);
   const info = `<details class="dd"${infoOn ? " open" : ""}><summary${infoOn ? ' class="on"' : ""}>소개</summary><div class="dd-menu">${INFO_PAGES.map((p) => `<a href="${p.href}"${p.slug === active ? ' class="on"' : ""}>${p.name}</a>`).join("")}</div></details>`;
   return `<header class="site">
