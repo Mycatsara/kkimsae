@@ -85,10 +85,11 @@ test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개�
   assert.match(f, /© 2026 낌새/);
 });
 
-test("sidebar: 최근 글 6개·카테고리 편수·검색 폼", () => {
+test("sidebar: 카테고리 편수 → 검색 폼 → 최근 글 4개 순서", () => {
   const posts = Array.from({ length: 8 }, (_, i) => ({ slug: "p" + i, category: i % 2 ? "money" : "daily", date: "2026-09-0" + (9 - i), title: "글" + i, description: "d", image: i ? { src: "/img/p.webp", w: 1200, h: 675 } : undefined }));
   const s = L.sidebar(posts);
-  assert.equal((s.match(/<li><a href="\/(money|daily)\/p\d\.html">/g) || []).length, 6);
+  assert.equal((s.match(/<li><a href="\/(money|daily)\/p\d\.html">/g) || []).length, 4);
+  assert.ok(s.indexOf("카테고리") < s.indexOf("검색") && s.indexOf("검색") < s.indexOf("최근 글"), "위젯 순서");
   assert.match(s, /<span class="noimg"><\/span>/);
   assert.match(s, /경제·금융 <span class="n">\(4\)<\/span>/);
   assert.match(s, /이맘때 <span class="n">\(0\)<\/span>/);

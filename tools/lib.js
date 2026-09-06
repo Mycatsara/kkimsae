@@ -196,7 +196,7 @@ function card(p) {
 </a>`;
 }
 
-// 사이드바 (홈·카테고리·글): 최근 글 6 · 카테고리(편수) · 검색. 내용은 buildlist가 AUTO:SIDE 사이에 채운다
+// 사이드바 (홈·카테고리·글): 카테고리(편수) → 검색 → 최근 글 4 (9/6 운영자 순서). 고정(sticky) 없이 본문과 같이 흐른다. 내용은 buildlist가 AUTO:SIDE 사이에 채운다
 function sidebarShell() {
   return `<aside class="side">
 <!-- AUTO:SIDE:START -->
@@ -204,15 +204,9 @@ function sidebarShell() {
 </aside>`;
 }
 function sidebar(posts) {
-  const recent = posts.slice(0, 6).map((p) => `      <li><a href="${postUrl(p)}">${p.image ? `<img src="${esc(p.image.src)}" width="56" height="56" alt="" loading="lazy" decoding="async">` : `<span class="noimg"></span>`}<span><span class="t">${esc(p.title)}</span><span class="d">${fmtDate(p.date)}</span></span></a></li>`).join("\n");
+  const recent = posts.slice(0, 4).map((p) => `      <li><a href="${postUrl(p)}">${p.image ? `<img src="${esc(p.image.src)}" width="56" height="56" alt="" loading="lazy" decoding="async">` : `<span class="noimg"></span>`}<span><span class="t">${esc(p.title)}</span><span class="d">${fmtDate(p.date)}</span></span></a></li>`).join("\n");
   const cats = CATS.map((c) => { const n = posts.filter((p) => p.category === c.slug).length; return `      <li><a href="/${c.slug}/">${esc(c.name)} <span class="n">(${n})</span></a></li>`; }).join("\n");
   return `<div class="widget">
-  <h3>최근 글</h3>
-  <ul class="recent">
-${recent || '      <li class="none">아직 글이 없습니다</li>'}
-  </ul>
-</div>
-<div class="widget">
   <h3>카테고리</h3>
   <ul class="cats">
 ${cats}
@@ -221,6 +215,12 @@ ${cats}
 <div class="widget">
   <h3>검색</h3>
   <form class="search" action="/search.html" method="get"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+</div>
+<div class="widget">
+  <h3>최근 글</h3>
+  <ul class="recent">
+${recent || '      <li class="none">아직 글이 없습니다</li>'}
+  </ul>
 </div>`;
 }
 

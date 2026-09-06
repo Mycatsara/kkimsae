@@ -70,7 +70,7 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   const feed = fs.readFileSync(path.join(root, "feed.xml"), "utf8");
   assert.match(feed, /<title>새 글<\/title>/);
   assert.ok(feed.indexOf("새 글") < feed.indexOf("게임 글"));
-  // 사이드바: 홈·카테고리·글 모두에 최근 글 3개와 카테고리 편수
+  // 사이드바: 홈·카테고리·글 모두에 최근 글(3편 전부, 최대 4)과 카테고리 편수
   for (const f of ["index.html", "game/index.html", "money/old.html"]) {
     const s = fs.readFileSync(path.join(root, f), "utf8");
     const side = s.slice(s.indexOf("AUTO:SIDE:START"), s.indexOf("AUTO:SIDE:END"));
