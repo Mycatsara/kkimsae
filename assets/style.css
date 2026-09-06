@@ -30,9 +30,9 @@ main.narrow{max-width:760px;margin:0 auto}                 /* 소개·개인정�
 
 /* ---------- 본문 + 사이드바 2단 ---------- */
 .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start;padding-top:26px}
-.layout>main{padding-top:0;min-width:0}
+.layout>main,.layout>aside{padding-top:0;min-width:0;max-width:100%}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.cards .card{margin-bottom:0;display:flex;flex-direction:column;height:100%}
+.cards .card{margin-bottom:0;display:flex;flex-direction:column;height:100%;min-width:0;max-width:100%}   /* 9/6 밤: 사파리가 격자 칸 최소 폭을 이미지 원본(1200px)으로 잡아 카드가 화면 밖으로 나가던 것 — min-width:0 */
 .cards .card h2{font-size:17px;line-height:1.35}
 .cards .card .excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
 .cards .card .chip{align-self:flex-start;margin:0}
@@ -104,7 +104,7 @@ main{padding-top:26px}
 .cathead p{font-size:13.5px;color:var(--sub);margin:4px 0 0}
 .card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;margin-bottom:14px;color:var(--body)}
 .card:hover{border-color:var(--main);color:var(--body)}
-.card .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px}
+.card .thumb{display:block;width:100%;min-width:0;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px}
 .card h2{font-size:20px;margin-bottom:6px}
 .card:hover h2{color:var(--main);box-shadow:inset 0 -0.35em 0 var(--hl)}
 .meta{font-size:12.5px;color:var(--sub);margin:0}
