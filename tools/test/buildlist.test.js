@@ -85,6 +85,20 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   assert.equal(run(env, ["--check"]).code, 0);
 });
 
+test("listBlock: 앞 4편은 사진 카드, 나머지는 번호 없는 제목 목록(data-page-size), 0편이면 빈 안내", () => {
+  const { listBlock } = require("../buildlist");
+  const posts = Array.from({ length: 6 }, (_, i) => ({ slug: "p" + i, category: "daily", date: "2026-09-0" + (9 - i), title: "글" + i, description: "d" }));
+  const h = listBlock(posts, { cardMax: 4, pageSize: 10 });
+  assert.equal((h.match(/class="card"/g) || []).length, 4);
+  assert.match(h, /<ol class="post-list archive" data-page-size="10">/);
+  assert.equal((h.match(/<li>/g) || []).length, 2);
+  assert.match(h, /<span class="t">글4<\/span><span class="d">2026\.09\.05<\/span><span class="g">→<\/span>/);
+  assert.doesNotMatch(h, /class="n"/);
+  const few = listBlock(posts.slice(0, 2), { cardMax: 4, pageSize: 10 });
+  assert.equal((few.match(/class="card"/g) || []).length, 2); assert.doesNotMatch(few, /post-list/);
+  assert.match(listBlock([], {}), /아직 글이 없습니다/);
+});
+
 test("--check: posts.json을 바꾸고 buildlist를 안 돌리면 실패", () => {
   const posts = [{ slug: "a", category: "daily", date: "2026-09-02", title: "A", description: "d", tags: [] }];
   const { root, env } = setup(posts);

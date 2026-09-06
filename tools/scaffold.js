@@ -5,13 +5,14 @@ const L = require("./lib");
 
 function shell({ title, description, url, active, body, noindex = false, jsonld = [], side = true, narrow = false }) {
   const inner = side ? `<div class="layout">\n<main>\n${body}\n</main>\n${L.sidebarShell()}\n</div>` : `<main${narrow ? ' class="narrow"' : ""}>\n${body}\n</main>`;
+  const script = side ? `\n<script src="/site.js?v=20260906"></script>` : "";
   return `${L.head({ title, description, url, noindex, jsonld })}
 <body>
 <div class="wrap">
 ${L.header(active)}
 ${inner}
 ${L.footer()}
-</div>
+</div>${script}
 </body>
 </html>
 `;
@@ -24,7 +25,7 @@ L.write("index.html", shell({
   url: "/", active: "home",
   jsonld: [{ "@context": "https://schema.org", "@type": "WebSite", name: L.SITE.name, url: L.SITE.url + "/", description: L.SITE.tagline, inLanguage: "ko" }],
   body: `<h1 class="sr">${L.SITE.name} — ${L.SITE.tagline}</h1>
-<div class="cards">
+<div class="list">
 <!-- AUTO:HOME:START -->
 <!-- AUTO:HOME:END -->
 </div>`,
@@ -38,7 +39,7 @@ for (const c of L.CATS) {
       { "@type": "ListItem", position: 1, name: "홈", item: L.SITE.url + "/" },
       { "@type": "ListItem", position: 2, name: c.name, item: `${L.SITE.url}/${c.slug}/` } ] }],
     body: `<div class="cathead"><h1>${L.esc(c.name)}</h1><p>${L.esc(c.desc)}</p></div>
-<div class="cards">
+<div class="list">
 <!-- AUTO:LIST:START -->
 <!-- AUTO:LIST:END -->
 </div>`,

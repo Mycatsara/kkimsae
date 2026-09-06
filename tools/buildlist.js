@@ -11,8 +11,18 @@ const fs = require("fs");
 const path = require("path");
 const L = require("./lib");
 
-const HOME_MAX = 10;
 const NEXT_MAX = 3;
+// 홈·카테고리 목록 블록: 앞 cardMax편은 사진 카드(2열), 나머지는 번호 없는 제목 목록. 목록이 pageSize를 넘으면 site.js가 페이지 번호를 만든다
+// (기록/홈목록화면_적용안내.md, taxtool 9/6 확정). 값은 posts.json의 cardMax·pageSize(기본 4·10)
+function listBlock(list, cfg) {
+  if (!list.length) return EMPTY;
+  const cardMax = cfg.cardMax ?? 4, pageSize = cfg.pageSize ?? 10;
+  const cards = list.slice(0, cardMax).map(L.card).join("\n");
+  const rest = list.slice(cardMax);
+  const dot = (iso) => iso.replace(/-/g, ".");
+  const items = rest.map((p) => `  <li><a href="${L.postUrl(p)}"><span class="t">${L.esc(p.title)}</span><span class="d">${dot(p.date)}</span><span class="g">→</span></a></li>`).join("\n");
+  return `<div class="cards">\n${cards}\n</div>` + (rest.length ? `\n<ol class="post-list archive" data-page-size="${pageSize}">\n${items}\n</ol>` : "");
+}
 
 function fill(file, name, inner, check, optional = false) {
   const s = L.read(file);
@@ -31,7 +41,9 @@ function put(file, content, check) {
 
 function loadPosts() {
   const data = JSON.parse(L.read("tools/posts.json"));
+  // 같은 날짜면 배열 순서(뒤에 게시한 글이 앞) 유지
   const posts = data.posts.slice().sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  posts.cfg = { cardMax: data.cardMax, pageSize: data.pageSize };
   // 검증: 카테고리·중복·파일 존재
   const seen = new Set();
   for (const p of posts) {
@@ -114,12 +126,13 @@ function build({ check = false } = {}) {
   const mark = (f, did) => { if (did) { changed++; changedFiles.push(f); } };
 
   const side = L.sidebar(posts);
-  mark("index.html", fill("index.html", "HOME", posts.length ? posts.slice(0, HOME_MAX).map(L.card).join("\n") : EMPTY, check));
+  const cfg = posts.cfg || {};
+  mark("index.html", fill("index.html", "HOME", listBlock(posts, cfg), check));
   mark("index.html", fill("index.html", "SIDE", side, check));
   if (L.exists("search.html")) mark("search.html", fill("search.html", "SIDE", side, check, true));
   for (const c of L.CATS) {
     const mine = posts.filter((p) => p.category === c.slug);
-    mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "LIST", mine.length ? mine.map(L.card).join("\n") : EMPTY, check));
+    mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "LIST", listBlock(mine, cfg), check));
     mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "SIDE", side, check));
   }
   for (const p of posts) {
@@ -145,4 +158,4 @@ if (require.main === module) {
   } catch (e) { console.error("오류:", e.message); process.exit(1); }
 }
 
-module.exports = { build, related, sitemap, feed, loadPosts };
+module.exports = { build, related, sitemap, feed, loadPosts, listBlock };

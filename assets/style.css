@@ -37,6 +37,20 @@ main.narrow{max-width:760px;margin:0 auto}                 /* 소개·개인정�
 .cards .card .excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
 .cards .card .chip{align-self:flex-start;margin:0}
 .cards .empty{grid-column:1/-1}
+/* 카드 아래 제목 목록(번호 없음): 제목 · 날짜 · 화살표 */
+.post-list.archive{list-style:none;margin:14px 0 0;padding:0 4px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.post-list.archive li{border-bottom:1px solid var(--line)}
+.post-list.archive li:last-child{border-bottom:0}
+.post-list.archive a{display:flex;align-items:center;gap:12px;padding:12px 14px;color:var(--ink)}
+.post-list.archive .t{flex:1;font-size:14.5px;font-weight:700;line-height:1.4}
+.post-list.archive .d{flex:none;font-size:12px;color:var(--sub)}
+.post-list.archive .g{flex:none;color:var(--main);font-weight:700}
+.post-list.archive a:hover .t{color:var(--main);box-shadow:inset 0 -0.35em 0 var(--hl)}
+/* 페이지 번호: 36px 정사각, 현재 쪽은 먹색 배경 */
+.pager{display:flex;gap:6px;justify-content:center;margin-top:18px}
+.pager a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid var(--line);border-radius:9px;font-weight:700;font-size:14px;color:var(--ink)}
+.pager a:hover{border-color:var(--ink)}
+.pager a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .side .widget{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px;font-size:14px}
 .side .widget h3{font-size:14px;font-weight:900;margin:0 0 10px;padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
 .side ul{list-style:none;margin:0;padding:0}
