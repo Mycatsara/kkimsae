@@ -176,8 +176,8 @@ function header(active = "") {
 }
 
 function footer() {
+  // 바닥은 저작권 한 줄만 — 소개·개인정보·연락 링크는 머리의 "소개" 펼침 메뉴로 옮김(9/6 운영자 요청)
   return `<footer class="site">
-  <div class="flinks">${INFO_PAGES.map((p) => `<a href="${p.href}">${p.name}</a>`).join("")}</div>
   <p class="copy">© 2026 ${SITE.name} · ${SITE.tagline}</p>
 </footer>`;
 }

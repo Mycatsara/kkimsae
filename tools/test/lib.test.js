@@ -80,8 +80,8 @@ test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개�
   assert.match(h, /<a href="\/privacy.html" class="on">개인정보처리방침<\/a>/);
   assert.match(h, /<a href="\/money\/">경제·금융<\/a>/);
   const f = L.footer();
-  assert.doesNotMatch(f, /feed\.xml|RSS/);
-  assert.match(f, /개인정보처리방침/);
+  assert.doesNotMatch(f, /feed\.xml|RSS|<a /);
+  assert.match(f, /© 2026 낌새/);
 });
 
 test("sidebar: 최근 글 6개·카테고리 편수·검색 폼", () => {

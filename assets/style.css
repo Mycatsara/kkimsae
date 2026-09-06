@@ -149,7 +149,7 @@ footer.site{margin-top:48px;border-top:1.5px solid var(--ink);padding:22px 0 40p
 .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:13px;font-weight:700}
 .flinks a{color:var(--ink)}
 .flinks a:hover{color:var(--main);box-shadow:inset 0 -0.4em 0 var(--hl)}
-.copy{font-size:12.5px;color:var(--sub);margin:14px 0 0}
+.copy{font-size:12.5px;color:var(--sub);margin:0}
 
 /* ---------- 모바일 ---------- */
 @media (max-width:768px){
