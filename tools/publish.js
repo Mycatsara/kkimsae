@@ -72,7 +72,7 @@ async function run() {
     const destName = `${front.slug}-${String(i + 1).padStart(2, "0")}${ext}`;
     return { key: path.basename(rel), src, destName };
   });
-  const bodyImgs = [...body.matchAll(/^!\[([^\]]*)\]\(([^)]+)\)$/gm)].map((m) => path.basename(m[2]));
+  const bodyImgs = [...body.matchAll(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)\s*$/gm)].map((m) => path.basename(m[2]));
   for (const k of bodyImgs) if (!imgPlan.find((p) => p.key === k)) throw new Error(`본문 이미지 ${k}가 머리말 images에 없음`);
   if (bodyImgs.length !== front.images.length) console.warn(`주의: 머리말 images ${front.images.length}장, 본문 삽입 ${bodyImgs.length}장`);
 

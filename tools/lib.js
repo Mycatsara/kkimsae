@@ -79,7 +79,8 @@ function mdToHtml(body, imageMap = {}) {
     if (!t) { flush(); i++; continue; }
     if ((m = t.match(/^(#{2,3})\s+(.*)$/))) { flush(); const lv = m[1].length; out.push(`<h${lv}>${inline(m[2])}</h${lv}>`); i++; continue; }
     if (/^---+$/.test(t)) { flush(); out.push("<hr>"); i++; continue; }
-    if ((m = t.match(/^!\[([^\]]*)\]\(([^)]+)\)$/))) {
+    // ![alt](img/a.png) 또는 ![alt](img/a.png "캡션") — 캡션은 실제 사진의 출처·라이선스 표기용(figcaption, 링크 허용)
+    if ((m = t.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/))) {
       flush();
       const key = path.basename(m[2]);
       const img = imageMap[key];
@@ -87,7 +88,8 @@ function mdToHtml(body, imageMap = {}) {
       if (!m[1].trim()) throw new Error(`이미지 alt가 비어 있음: ${m[2]}`);
       imgCount++;
       const first = imgCount === 1;
-      out.push(`<figure class="fig${first ? " hero" : ""}"><img src="${img.src}" width="${img.w}" height="${img.h}" alt="${esc(m[1])}"${first ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></figure>`);
+      const cap = m[3] ? `<figcaption>${inline(m[3])}</figcaption>` : "";
+      out.push(`<figure class="fig${first ? " hero" : ""}"><img src="${img.src}" width="${img.w}" height="${img.h}" alt="${esc(m[1])}"${first ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">${cap}</figure>`);
       i++; continue;
     }
     if (/^>/.test(t)) { flush(); const q = []; while (i < lines.length && /^>/.test(lines[i].trim())) { q.push(lines[i].trim().replace(/^>\s?/, "")); i++; } out.push(`<blockquote>${q.join("\n").split(/\n\s*\n/).map((p) => `<p>${inline(p.replace(/\n/g, " "))}</p>`).join("")}</blockquote>`); continue; }

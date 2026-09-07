@@ -4,6 +4,44 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "lck-lolpark-guide",
+      "category": "game",
+      "date": "2026-09-07",
+      "title": "LCK 직관 가는 법 — 롤파크 위치, 티켓 예매 시간과 가격, 당일 동선",
+      "description": "LCK 정규 경기는 서울 종로 롤파크(450석)에서 열리고, 티켓은 NOL 티켓에서 경기 9일 전에 열립니다. 2026년 기준 가격, 취소표 시간, 결승처럼 큰 경기가 다른 곳에서 열리는 이유까지 정리했습니다.",
+      "tags": [
+        "LCK 직관",
+        "롤파크",
+        "LCK 티켓",
+        "LCK 티켓 예매",
+        "롤파크 가는 법"
+      ],
+      "image": {
+        "src": "/img/lck-lolpark-guide-01.webp",
+        "w": 1200,
+        "h": 495
+      }
+    },
+    {
+      "slug": "kimjang-timing",
+      "category": "daily",
+      "date": "2026-09-07",
+      "title": "김장 시기, 지역별로 언제가 맞나 — 기온 기준과 날짜 잡는 법",
+      "description": "김장 적기는 일 평균기온 4도·최저기온 0도 아래로 내려가는 때입니다. 서울은 11월 말, 남부는 12월 초라는 평년 기준과 올해 날짜를 잡는 방법을 정리했습니다.",
+      "tags": [
+        "김장 시기",
+        "김장 적기",
+        "김장 언제",
+        "지역별 김장 시기",
+        "김장 준비"
+      ],
+      "image": {
+        "src": "/img/kimjang-timing-01.webp",
+        "w": 1200,
+        "h": 686
+      }
+    },
+    {
       "slug": "pickled-cabbage-20kg",
       "category": "daily",
       "date": "2026-09-06",

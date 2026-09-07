@@ -48,6 +48,13 @@ test("mdToHtml: 이미지는 figure, 첫 장은 hero+fetchpriority, 둘째는 la
   assert.match(h, /<figure class="fig"><img src="\/img\/x-02.webp" width="1200" height="675" alt="둘째 장면" loading="lazy" decoding="async"><\/figure>/);
 });
 
+test("mdToHtml: 이미지 캡션(출처 표기)은 figcaption, 링크 허용", () => {
+  const map = { "p.jpg": { src: "/img/x-01.webp", w: 1200, h: 900 } };
+  const h = L.mdToHtml('![경기장 내부](img/p.jpg "사진: Altostratus, [위키미디어 공용](https://commons.wikimedia.org/wiki/File:LOL_Park_Stadium.jpg), CC BY-SA 4.0")', map);
+  assert.match(h, /<figcaption>사진: Altostratus, <a href="https:\/\/commons.wikimedia.org\/wiki\/File:LOL_Park_Stadium.jpg" target="_blank" rel="noopener">위키미디어 공용<\/a>, CC BY-SA 4.0<\/figcaption><\/figure>/);
+  assert.match(h, /alt="경기장 내부"/);
+});
+
 test("mdToHtml: 이미지 파일 없음·alt 비어 있음은 오류", () => {
   assert.throws(() => L.mdToHtml("![a](img/none.webp)", {}), /이미지 없음/);
   assert.throws(() => L.mdToHtml("![](img/a.webp)", { "a.webp": { src: "/img/a.webp", w: 1, h: 1 } }), /alt/);
