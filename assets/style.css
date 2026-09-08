@@ -141,7 +141,8 @@ article{background:var(--paper);border:1px solid var(--line);border-radius:14px;
 .body table{width:100%;border-collapse:collapse;font-size:14px;margin:0}
 .body th{font-size:12.5px;font-weight:700;color:var(--sub);text-align:left;padding:9px 6px;border-bottom:1.5px solid var(--ink)}
 .body td{padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-.body td:last-child,.body th:last-child{text-align:right;white-space:nowrap}
+.body table.num td:last-child,.body table.num th:last-child{text-align:right;white-space:nowrap}
+.body td:first-child{white-space:normal}
 .body td:first-child,.body th:first-child{text-align:left}
 .body tr.total td{border-top:1.5px dashed var(--ink);font-weight:700;color:var(--ink)}
 .body code{background:var(--quote);border:1px solid var(--line);border-radius:4px;font-size:13.5px;padding:0 4px}

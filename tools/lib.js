@@ -101,7 +101,10 @@ function mdToHtml(body, imageMap = {}) {
       const head = cells(rows[0]);
       const bodyRows = rows.slice(1).filter((r) => !/^\|\s*:?-+/.test(r));
       const tr = (r) => { const cs = cells(r); const total = /^\*\*(합계|총|하루 지급액|계)/.test(cs[0]) || /^(합계|총계|계)$/.test(cs[0].replace(/\*\*/g, "")); return `<tr${total ? ' class="total"' : ""}>${cs.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`; };
-      out.push(`<div class="tblwrap"><table><thead><tr>${head.map((h) => `<th>${inline(h)}</th>`).join("")}</tr></thead><tbody>${bodyRows.map(tr).join("")}</tbody></table></div>`);
+      // 마지막 열이 숫자·날짜뿐(글자 3자 연속 없음)일 때만 num — CSS가 오른쪽 정렬·줄바꿈 금지. 문장 열은 보통 줄바꿈(모바일 찌그러짐 방지, 9/8)
+      const plain = (c) => c.replace(/\*\*|`/g, "").trim();
+      const num = bodyRows.length > 0 && bodyRows.every((r) => { const cs = cells(r); return !/[가-힣a-zA-Z]{3,}/.test(plain(cs[cs.length - 1])); });
+      out.push(`<div class="tblwrap"><table${num ? " class=\"num\"" : ""}><thead><tr>${head.map((h) => `<th>${inline(h)}</th>`).join("")}</tr></thead><tbody>${bodyRows.map(tr).join("")}</tbody></table></div>`);
       continue;
     }
     if (/^([-*]|\d+\.)\s+/.test(t)) {

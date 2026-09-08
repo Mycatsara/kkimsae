@@ -36,9 +36,17 @@ test("mdToHtml: 제목·문단·목록·인용·구분선", () => {
 
 test("mdToHtml: 표는 가로 스크롤 상자에 담고 합계 행에 total", () => {
   const h = L.mdToHtml("| 구분 | 금액 |\n|---|---|\n| 기본 | 1만원 |\n| 합계 | 2만원 |");
-  assert.match(h, /<div class="tblwrap"><table><thead><tr><th>구분<\/th><th>금액<\/th><\/tr><\/thead>/);
+  assert.match(h, /<div class="tblwrap"><table class="num"><thead><tr><th>구분<\/th><th>금액<\/th><\/tr><\/thead>/);
   assert.match(h, /<tr><td>기본<\/td><td>1만원<\/td><\/tr>/);
   assert.match(h, /<tr class="total"><td>합계<\/td>/);
+});
+
+test("mdToHtml: 마지막 열이 숫자·날짜면 table.num, 문장이면 class 없음", () => {
+  const n = L.mdToHtml("| 구분 | 금액 |\n|---|---|\n| 기본 | 1만원 |\n| 추가 | 12월 21일~1월 4일 |");
+  assert.match(n, /<table class="num">/);
+  const s = L.mdToHtml("| 기념일 | 뜻 |\n|---|---|\n| 농업인의 날 | 농업인의 긍지를 북돋우는 날 |");
+  assert.match(s, /<div class="tblwrap"><table><thead>/);
+  assert.doesNotMatch(s, /class="num"/);
 });
 
 test("mdToHtml: 이미지는 figure, 첫 장은 hero+fetchpriority, 둘째는 lazy", () => {
