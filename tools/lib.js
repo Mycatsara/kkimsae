@@ -211,9 +211,11 @@ function sidebarShell() {
 function sidebar(posts) {
   const recent = posts.slice(0, 4).map((p) => `      <li><a href="${postUrl(p)}">${p.image ? `<img src="${esc(p.image.src)}" width="56" height="56" alt="" loading="lazy" decoding="async">` : `<span class="noimg"></span>`}<span><span class="t">${esc(p.title)}</span><span class="d">${fmtDate(p.date)}</span></span></a></li>`).join("\n");
   const cats = CATS.map((c) => { const n = posts.filter((p) => p.category === c.slug).length; return `      <li><a href="/${c.slug}/">${esc(c.name)} <span class="n">(${n})</span></a></li>`; }).join("\n");
+  const all = `      <li><a href="/">전체 <span class="n">(${posts.length})</span></a></li>`; // 맨 위 전체(N) → 홈 (2026-09-09 운영자 요청, 4개 블로그 공통)
   return `<div class="widget">
   <h3>카테고리</h3>
   <ul class="cats">
+${all}
 ${cats}
   </ul>
 </div>
