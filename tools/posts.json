@@ -4,6 +4,27 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "diary-choosing-guide",
+      "category": "daily",
+      "date": "2026-09-11",
+      "title": "2027 다이어리 고르는 법, 먼슬리·위클리·데일리와 만년형 중 뭘 살까",
+      "description": "2027 다이어리가 9월 지금 이미 팔리고 있습니다. 먼슬리·위클리·데일리 중 어느 칸에 쓸지, 날짜형과 만년형 차이, B6와 A5 실제 치수와 두께·무게를 브랜드 사양으로 비교했습니다.",
+      "tags": [
+        "2027 다이어리",
+        "다이어리 추천",
+        "만년 다이어리",
+        "먼슬리 다이어리",
+        "위클리 다이어리",
+        "데일리 다이어리",
+        "다이어리 크기"
+      ],
+      "image": {
+        "src": "/img/diary-choosing-guide-01.webp",
+        "w": 1200,
+        "h": 686
+      }
+    },
+    {
       "slug": "year-end-tax-preview",
       "category": "money",
       "date": "2026-09-11",
