@@ -4,6 +4,43 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "pension-savings-vs-irp",
+      "category": "money",
+      "date": "2026-09-13",
+      "title": "연금저축 IRP 차이, 가입 전에 중도인출부터 비교하세요",
+      "description": "연금저축과 IRP는 가입 대상과 중도인출 조건이 다릅니다. 연금저축펀드 기준 비교표, 공제 대상 납입액 600만·900만원의 의미, 연말에 돈을 넣기 전 확인할 질문을 정리했습니다.",
+      "tags": [
+        "연금저축 IRP 차이",
+        "연금저축펀드",
+        "개인형 IRP",
+        "중도인출",
+        "세액공제"
+      ],
+      "image": {
+        "src": "/img/pension-savings-vs-irp-01.webp",
+        "w": 1200,
+        "h": 982
+      }
+    },
+    {
+      "slug": "autumn-hiking-checklist",
+      "category": "daily",
+      "date": "2026-09-13",
+      "title": "가을 등산 준비물, 초보자는 복장부터 어떻게 챙길까",
+      "description": "가을 산행을 처음 준비한다면 옷과 장비보다 코스부터 정해 보세요. 보온옷·등산화·물·랜턴을 챙기는 기준과 출발 전 확인할 날씨, 하산 시간을 초보자 점검표로 정리했습니다.",
+      "tags": [
+        "가을 등산",
+        "등산 준비물",
+        "등산 복장",
+        "초보 등산"
+      ],
+      "image": {
+        "src": "/img/autumn-hiking-checklist-01.webp",
+        "w": 1200,
+        "h": 799
+      }
+    },
+    {
       "slug": "health-checkup-booking",
       "category": "daily",
       "date": "2026-09-12",
