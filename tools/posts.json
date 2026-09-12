@@ -4,6 +4,43 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "health-checkup-booking",
+      "category": "daily",
+      "date": "2026-09-12",
+      "title": "건강검진 예약 방법, 대상 조회부터 병원 찾기까지",
+      "description": "국가건강검진을 예약하려면 내 대상 항목과 검진기관을 먼저 확인해야 합니다. 공단의 현재 조회 경로, 병원 검색과 예약의 차이, 전화할 때 물어볼 항목과 검진 전 준비를 순서대로 정리했습니다.",
+      "tags": [
+        "건강검진 예약",
+        "국가건강검진",
+        "검진대상 조회",
+        "검진기관 찾기"
+      ],
+      "image": {
+        "src": "/img/health-checkup-booking-01.webp",
+        "w": 1200,
+        "h": 526
+      }
+    },
+    {
+      "slug": "autumn-foliage-timing",
+      "category": "season",
+      "date": "2026-09-12",
+      "title": "단풍 시기, 첫 단풍과 절정 중 언제 갈까",
+      "description": "단풍 여행 날짜는 첫 단풍과 절정을 구분해 잡아야 합니다. 산 전체의 20%와 80%가 뜻하는 차이, 작년 날짜를 그대로 쓰면 안 되는 이유, 기상청 관측 사진으로 출발 전 확인하는 순서를 정리했습니다.",
+      "tags": [
+        "단풍 시기",
+        "단풍 절정",
+        "첫 단풍",
+        "단풍 여행",
+        "단풍 현황"
+      ],
+      "image": {
+        "src": "/img/autumn-foliage-timing-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
       "slug": "diary-choosing-guide",
       "category": "daily",
       "date": "2026-09-11",
