@@ -4,6 +4,44 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "simple-chuseok-table",
+      "category": "season",
+      "date": "2026-09-14",
+      "title": "추석 차례상 간소화, 전 없이 준비해도 될까",
+      "description": "추석 차례상을 간소하게 준비하고 싶다면 음식 목록부터 정해 보세요. 성균관 안내에 나온 기본 음식과 전을 생략하는 기준, 과일 네 종류를 포함한 가짓수, 가족과 상의할 준비 순서를 정리했습니다.",
+      "tags": [
+        "추석 차례상",
+        "차례상 간소화",
+        "성균관 차례상",
+        "차례상 음식",
+        "차례상 배치"
+      ],
+      "image": {
+        "src": "/img/simple-chuseok-table-01.webp",
+        "w": 1200,
+        "h": 971
+      }
+    },
+    {
+      "slug": "grave-mowing-service",
+      "category": "season",
+      "date": "2026-09-14",
+      "title": "벌초 대행 신청, 견적 전에 준비할 5가지",
+      "description": "벌초 대행을 처음 맡긴다면 묘지가 있는 지역부터 확인하세요. 농협·산림조합에 문의하는 순서와 견적 전에 준비할 묘지 정보, 작업 범위와 결과 사진까지 확인할 항목을 정리했습니다.",
+      "tags": [
+        "벌초 대행",
+        "벌초대행 신청",
+        "벌초 비용",
+        "산림조합 벌초",
+        "농협 벌초"
+      ],
+      "image": {
+        "src": "/img/grave-mowing-service-01.webp",
+        "w": 800,
+        "h": 450
+      }
+    },
+    {
       "slug": "pension-savings-vs-irp",
       "category": "money",
       "date": "2026-09-13",
