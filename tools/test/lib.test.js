@@ -34,6 +34,12 @@ test("mdToHtml: 제목·문단·목록·인용·구분선", () => {
   assert.match(h, /<h3>작은 제목<\/h3>/);
 });
 
+test("inline: 출처 URL의 쿼리 구분자는 한 번만 이스케이프", () => {
+  const h = L.inline('[공식 안내](https://example.com/view?a=1&b=2&q="값")');
+  assert.match(h, /href="https:\/\/example\.com\/view\?a=1&amp;b=2&amp;q=&quot;값&quot;"/);
+  assert.doesNotMatch(h, /&amp;amp;/);
+});
+
 test("mdToHtml: 표는 가로 스크롤 상자에 담고 합계 행에 total", () => {
   const h = L.mdToHtml("| 구분 | 금액 |\n|---|---|\n| 기본 | 1만원 |\n| 합계 | 2만원 |");
   assert.match(h, /<div class="tblwrap"><table class="num"><thead><tr><th>구분<\/th><th>금액<\/th><\/tr><\/thead>/);
