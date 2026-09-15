@@ -4,6 +4,40 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "autumn-arboretum",
+      "category": "season",
+      "date": "2026-09-15",
+      "title": "가을 여행지 수목원, 포천·세종 어디로 갈까",
+      "description": "가을 당일 여행지로 포천 국립수목원과 국립세종수목원을 비교합니다. 차량 주차 예약, 현장 매표, 관람시간과 세종 버스 정류장까지 확인해 내 출발지에 맞는 수목원을 골라 보세요.",
+      "tags": [
+        "가을 여행지",
+        "국립수목원",
+        "국립세종수목원"
+      ],
+      "image": {
+        "src": "/img/autumn-arboretum-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
+      "slug": "chuseok-food-gift",
+      "category": "season",
+      "date": "2026-09-15",
+      "title": "추석 선물세트 고르는 법, 주문 전 확인할 5가지",
+      "description": "추석 식품 선물세트를 택배로 보낼 때 수령일, 보관 공간, 포장 단위, 제품 표시, 주문 내역을 확인하는 순서입니다. 과일·육류·한과를 받는 사람의 생활에 맞춰 비교해 보세요.",
+      "tags": [
+        "추석 선물세트",
+        "추석 선물",
+        "식품 선물"
+      ],
+      "image": {
+        "src": "/img/chuseok-food-gift-01.webp",
+        "w": 1200,
+        "h": 1071
+      }
+    },
+    {
       "slug": "simple-chuseok-table",
       "category": "season",
       "date": "2026-09-14",
