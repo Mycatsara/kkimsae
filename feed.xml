@@ -5,8 +5,24 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>할로윈 의상, 아이가 입을 옷 고르는 5가지 기준</title>
+      <link>https://kkimsae.com/season/halloween-costume.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/halloween-costume.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>어린이집이나 야외 행사에 입을 할로윈 의상을 고른다면 디자인 다음으로 기장과 움직임을 확인해 보세요. 사이즈 비교, 가면의 시야, 소품 재질과 겉옷까지 구매 전에 살필 다섯 가지 기준을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>롤드컵 경기 방식, 스위스 스테이지부터 결승까지</title>
+      <link>https://kkimsae.com/game/worlds-format.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/game/worlds-format.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+      <category>게임</category>
+      <description>롤드컵을 처음 본다면 스위스 스테이지의 3승과 경기 중 세트 점수부터 구분해 보세요. 플레이인부터 결승까지 이어지는 방식, BO1·BO3·BO5의 차이와 공식 경기표 확인 순서를 정리했습니다.</description>
+    </item>
     <item>
       <title>가을 여행지 수목원, 포천·세종 어디로 갈까</title>
       <link>https://kkimsae.com/season/autumn-arboretum.html</link>
@@ -150,22 +166,6 @@
       <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>김장 적기는 일 평균기온 4도·최저기온 0도 아래로 내려가는 때입니다. 서울은 11월 말, 남부는 12월 초라는 평년 기준과 올해 날짜를 잡는 방법을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>절임배추 20kg은 몇 포기, 몇 인분인가 — 주문 시기와 받은 뒤 할 일</title>
-      <link>https://kkimsae.com/daily/pickled-cabbage-20kg.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/pickled-cabbage-20kg.html</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>절임배추 20kg은 보통 6~10포기, 4인 가족 한 번 김장 양입니다. 마트 사전예약과 산지 직구의 주문 시기, 받은 날 바로 써야 하는 이유와 세척 횟수까지 정리했습니다.</description>
-    </item>
-    <item>
-      <title>수능 도시락 메뉴, 시험장 규정부터 피할 음식까지 한 장 정리</title>
-      <link>https://kkimsae.com/season/suneung-lunchbox.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/suneung-lunchbox.html</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>수능 점심은 50분, 시험장엔 전자레인지가 없습니다. 보온 도시락에 담을 메뉴와 피할 음식, 온도 표시 텀블러처럼 뜻밖에 걸리는 반입 규정까지 정리했습니다.</description>
     </item>
   </channel>
 </rss>
