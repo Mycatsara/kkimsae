@@ -4,6 +4,42 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "seoul-autumn-parks",
+      "category": "season",
+      "date": "2026-09-17",
+      "title": "단풍 명소, 등산 없이 걷는 서울숲·올림픽공원",
+      "description": "단풍은 보고 싶지만 산행은 부담스럽다면 서울숲과 올림픽공원에서 걸을 구역부터 골라 보세요. 은행나무숲과 호반의 길의 차이, 공원과 시설별 이용시간, 출발 전 확인할 내용을 비교했습니다.",
+      "tags": [
+        "단풍 명소",
+        "서울 단풍",
+        "서울숲",
+        "올림픽공원 산책"
+      ],
+      "image": {
+        "src": "/img/seoul-autumn-parks-01.webp",
+        "w": 1200,
+        "h": 676
+      }
+    },
+    {
+      "slug": "autumn-food-shopping",
+      "category": "season",
+      "date": "2026-09-17",
+      "title": "가을 제철 음식, 고구마·밤·사과 고르는 법과 보관법",
+      "description": "가을 제철 음식을 샀다가 보관이 고민된다면 고구마·밤·사과부터 구분해 보세요. 장볼 때 확인할 상태, 냉장고에 넣을 것과 따로 둘 것, 먹을 양에 맞춰 구매하는 순서를 정리했습니다.",
+      "tags": [
+        "가을 제철 음식",
+        "고구마 보관",
+        "밤 보관",
+        "사과 고르는 법"
+      ],
+      "image": {
+        "src": "/img/autumn-food-shopping-01.webp",
+        "w": 1200,
+        "h": 675
+      }
+    },
+    {
       "slug": "halloween-costume",
       "category": "season",
       "date": "2026-09-16",
