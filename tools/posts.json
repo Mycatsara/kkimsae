@@ -4,6 +4,42 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "gstar-visitor",
+      "category": "game",
+      "date": "2026-09-18",
+      "title": "지스타 처음 간다면, BTC·BTB부터 구분해요",
+      "description": "지스타 첫 방문을 준비한다면 일반 관람용 BTC와 비즈니스용 BTB부터 구분해 보세요. G-CON과의 차이, 올해 행사 일정, 예매 안내에서 확인할 항목과 방문 계획 순서를 정리했습니다.",
+      "tags": [
+        "지스타",
+        "지스타 관람",
+        "지스타 BTC",
+        "지스타 BTB"
+      ],
+      "image": {
+        "src": "/img/gstar-visitor-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
+      "slug": "autumn-camping",
+      "category": "season",
+      "date": "2026-09-18",
+      "title": "가을 캠핑 준비물, 첫 1박은 잠자리부터 챙겨요",
+      "description": "가을 첫 1박 캠핑을 준비한다면 먹거리보다 밤에 잘 장비부터 확인해 보세요. 침낭과 매트의 차이, 마른 옷과 조명 준비, 출발 전 장비 점검과 텐트 안 화기 주의사항을 정리했습니다.",
+      "tags": [
+        "가을 캠핑",
+        "가을 캠핑 준비물",
+        "캠핑 침낭",
+        "캠핑 매트"
+      ],
+      "image": {
+        "src": "/img/autumn-camping-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "seoul-autumn-parks",
       "category": "season",
       "date": "2026-09-17",

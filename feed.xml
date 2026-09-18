@@ -5,8 +5,24 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 17 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>지스타 처음 간다면, BTC·BTB부터 구분해요</title>
+      <link>https://kkimsae.com/game/gstar-visitor.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/game/gstar-visitor.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <category>게임</category>
+      <description>지스타 첫 방문을 준비한다면 일반 관람용 BTC와 비즈니스용 BTB부터 구분해 보세요. G-CON과의 차이, 올해 행사 일정, 예매 안내에서 확인할 항목과 방문 계획 순서를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>가을 캠핑 준비물, 첫 1박은 잠자리부터 챙겨요</title>
+      <link>https://kkimsae.com/season/autumn-camping.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/autumn-camping.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>가을 첫 1박 캠핑을 준비한다면 먹거리보다 밤에 잘 장비부터 확인해 보세요. 침낭과 매트의 차이, 마른 옷과 조명 준비, 출발 전 장비 점검과 텐트 안 화기 주의사항을 정리했습니다.</description>
+    </item>
     <item>
       <title>단풍 명소, 등산 없이 걷는 서울숲·올림픽공원</title>
       <link>https://kkimsae.com/season/seoul-autumn-parks.html</link>
@@ -150,22 +166,6 @@
       <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>윈터타이어는 첫눈이 아니라 기온이 기준입니다. 타이어 회사들이 말하는 7도 기준, 11월 전국 평년 기온 7.6도, 눈길 제동거리 차이, 네 바퀴를 다 갈아야 하는 이유, 봄에 되돌리는 시점까지 정리했습니다.</description>
-    </item>
-    <item>
-      <title>스팀 세일 기간, 1년 4번 날짜와 한국 시간 시작 시각</title>
-      <link>https://kkimsae.com/game/steam-sale-schedule.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/game/steam-sale-schedule.html</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>게임</category>
-      <description>스팀 큰 세일은 1년 네 번, 봄 3월 중순·여름 6월 말·가을 10월 초·겨울 12월 중순입니다. 밸브 공지 기준 2026·2027년 날짜, 한국 시간 시작 시각, 30일 할인 규칙으로 살 때를 정하는 법을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>빼빼로데이 날짜와 유래, 11월 11일에 겹치는 기념일 5개</title>
-      <link>https://kkimsae.com/season/pepero-day.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/pepero-day.html</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>빼빼로데이는 매년 11월 11일이고 2026년은 수요일입니다. 1990년대 부산 여중생들의 유행에서 시작된 유래, 연 매출 절반이 몰리는 하루, 농업인의 날·가래떡데이·보행자의 날처럼 같은 날 겹치는 기념일을 정리했습니다.</description>
     </item>
   </channel>
 </rss>
