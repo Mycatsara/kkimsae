@@ -192,3 +192,6 @@ footer.site{margin-top:48px;border-top:1.5px solid var(--ink);padding:22px 0 40p
   .body table{font-size:13px}
   .body th,.body td{padding:8px 4px}
 }
+
+/* 2026-09-19: 사진 설명과 출처 */
+.fig figcaption,.fig figcaption a,.fig figcaption p,.photo-credit,.photo-credit a{font-size:12.5px;line-height:1.5;color:var(--sub);overflow-wrap:anywhere}

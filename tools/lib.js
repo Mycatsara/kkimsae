@@ -162,10 +162,18 @@ function head({ title, description, url, image, type = "website", jsonld = [], n
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260906d">
+<link rel="stylesheet" href="/assets/style.css?v=20260919">
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join("\n")}
-<script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.ga}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${SITE.ga}');</script>
+<script>
+(function(){
+ var off=new URLSearchParams(location.search).get('ga')==='off';
+ try{if(off)sessionStorage.setItem('gaoff','1');off=off||sessionStorage.getItem('gaoff')==='1';}catch(e){}
+ if(off||navigator.webdriver===true)return;
+ window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config','${SITE.ga}');
+ var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${SITE.ga}';document.head.appendChild(s);
+})();
+</script>
 </head>`;
 }
 
