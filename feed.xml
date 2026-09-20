@@ -5,8 +5,24 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 19 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>남당항 대하축제, 입장료와 먹거리 비용은 달라요</title>
+      <link>https://kkimsae.com/season/namdang-shrimp-visit.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/namdang-shrimp-visit.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>남당항 대하축제의 무료 안내를 식사까지 무료라는 뜻으로 읽지 마세요. 올해 행사 기간과 입장·먹거리·체험 비용 구분, 현지 식사와 포장 선택, 출발 전에 확인할 이동 정보를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>가을 코디, 아침저녁과 낮을 나눠 입는 법</title>
+      <link>https://kkimsae.com/daily/autumn-outfit-layers.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/autumn-outfit-layers.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>아침에는 서늘하고 낮에는 더워 가을 코디가 고민이라면, 겉옷을 벗었을 때부터 생각해 보세요. 출퇴근 시간별 날씨 확인과 가진 옷으로 만드는 조합, 겉옷의 여유와 휴대성 점검 순서를 정리했습니다.</description>
+    </item>
     <item>
       <title>정읍 구절초 축제, 입장료·주차부터 확인해요</title>
       <link>https://kkimsae.com/season/gujeolcho-visit.html</link>
@@ -150,22 +166,6 @@
       <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
       <category>경제·금융</category>
       <description>연말정산 미리보기는 해마다 10월 말에서 11월 중순 사이 홈택스에 열립니다. 최근 3년 개통일, 들어가는 경로 4단계, 열리면 확인할 예상세액·카드 공제율·3년 추이, 1월 간소화 일정까지 정리했습니다.</description>
-    </item>
-    <item>
-      <title>난방비 줄이는 겨울 준비, 보일러 20도와 외출모드부터 가스 캐시백까지</title>
-      <link>https://kkimsae.com/daily/heating-cost-saving.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/heating-cost-saving.html</guid>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>난방비는 첫 고지서가 오기 전에 정해집니다. 에너지공단이 말하는 20도 기준과 1도당 7%, 보일러 회사가 권하는 외출모드 사용법, 창문 단열 효과, 줄인 만큼 현금으로 돌려받는 도시가스 캐시백과 에너지바우처 신청 기간까지 한 번에 정리했습니다.</description>
-    </item>
-    <item>
-      <title>독감 예방접종 시기, 2026년 무료 대상과 날짜별 일정</title>
-      <link>https://kkimsae.com/daily/flu-shot-timing.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/flu-shot-timing.html</guid>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>2026-2027절기 독감 무료접종은 9월 21일 시작해 어린이·임신부·65세 이상이 대상입니다. 날짜별 일정, 14세까지 확대된 대상, 항체가 생기는 2주와 10월 유행주의보를 기준으로 언제 맞아야 하는지 정리했습니다.</description>
     </item>
   </channel>
 </rss>

@@ -4,6 +4,42 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "namdang-shrimp-visit",
+      "category": "season",
+      "date": "2026-09-20",
+      "title": "남당항 대하축제, 입장료와 먹거리 비용은 달라요",
+      "description": "남당항 대하축제의 무료 안내를 식사까지 무료라는 뜻으로 읽지 마세요. 올해 행사 기간과 입장·먹거리·체험 비용 구분, 현지 식사와 포장 선택, 출발 전에 확인할 이동 정보를 정리했습니다.",
+      "tags": [
+        "남당항 대하축제",
+        "홍성 대하축제",
+        "대하축제 입장료",
+        "남당항 방문 준비"
+      ],
+      "image": {
+        "src": "/img/namdang-shrimp-visit-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
+      "slug": "autumn-outfit-layers",
+      "category": "daily",
+      "date": "2026-09-20",
+      "title": "가을 코디, 아침저녁과 낮을 나눠 입는 법",
+      "description": "아침에는 서늘하고 낮에는 더워 가을 코디가 고민이라면, 겉옷을 벗었을 때부터 생각해 보세요. 출퇴근 시간별 날씨 확인과 가진 옷으로 만드는 조합, 겉옷의 여유와 휴대성 점검 순서를 정리했습니다.",
+      "tags": [
+        "가을 코디",
+        "가을 옷차림",
+        "가을 출근룩",
+        "겹쳐 입기"
+      ],
+      "image": {
+        "src": "/img/autumn-outfit-layers-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "gujeolcho-visit",
       "category": "season",
       "date": "2026-09-19",
