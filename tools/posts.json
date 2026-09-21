@@ -4,6 +4,42 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "lightweight-puffer-buying-guide",
+      "category": "daily",
+      "date": "2026-09-21",
+      "title": "경량패딩 고르는 법, 필파워 숫자만 보면 될까",
+      "description": "경량패딩의 필파워가 높으면 더 따뜻할까요? 다운 충전량과 제품 전체 무게의 차이, 겉옷·이너 용도, 상세페이지에서 빠진 정보를 확인하는 순서까지 정리했습니다.",
+      "tags": [
+        "경량패딩",
+        "필파워",
+        "다운 충전량",
+        "패딩 고르는 법"
+      ],
+      "image": {
+        "src": "/img/lightweight-puffer-buying-guide-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
+      "slug": "webfoot-octopus-fishing-prep",
+      "category": "season",
+      "date": "2026-09-21",
+      "title": "쭈꾸미낚시 처음이라면, 예약 전에 확인할 5가지",
+      "description": "쭈꾸미 배낚시가 처음이라면 장비부터 사기 전에 예약 조건을 확인해 보세요. 집결 장소, 선비 포함 항목, 장비 대여, 기상 취소, 안전 준비까지 다섯 갈래로 정리했습니다.",
+      "tags": [
+        "쭈꾸미낚시",
+        "주꾸미낚시",
+        "배낚시 준비물",
+        "낚시 예약"
+      ],
+      "image": {
+        "src": "/img/webfoot-octopus-fishing-prep-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "namdang-shrimp-visit",
       "category": "season",
       "date": "2026-09-20",
