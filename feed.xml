@@ -5,8 +5,24 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 21 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>수능 시계 규정, 사기 전에 확인할 기능</title>
+      <link>https://kkimsae.com/season/suneung-watch-rules.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/suneung-watch-rules.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>수능용 시계는 아날로그라는 이름만 보면 될까요? 2027학년도 공식 규정과 제조사 사양을 바탕으로 전자화면·통신 기능, 착용감 확인 순서를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>새우젓 보관, 냉장과 냉동은 어떻게 고를까</title>
+      <link>https://kkimsae.com/daily/shrimp-storage.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/shrimp-storage.html</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>새우젓은 냉장과 냉동 중 어디에 보관할까요? 제조사 두 곳의 실제 표시를 비교하고 개봉 후 보관, 소분할 때 남겨둘 정보를 정리했습니다.</description>
+    </item>
     <item>
       <title>경량패딩 고르는 법, 필파워 숫자만 보면 될까</title>
       <link>https://kkimsae.com/daily/lightweight-puffer-buying-guide.html</link>
@@ -150,22 +166,6 @@
       <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>가을 산행을 처음 준비한다면 옷과 장비보다 코스부터 정해 보세요. 보온옷·등산화·물·랜턴을 챙기는 기준과 출발 전 확인할 날씨, 하산 시간을 초보자 점검표로 정리했습니다.</description>
-    </item>
-    <item>
-      <title>건강검진 예약 방법, 대상 조회부터 병원 찾기까지</title>
-      <link>https://kkimsae.com/daily/health-checkup-booking.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/health-checkup-booking.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>국가건강검진을 예약하려면 내 대상 항목과 검진기관을 먼저 확인해야 합니다. 공단의 현재 조회 경로, 병원 검색과 예약의 차이, 전화할 때 물어볼 항목과 검진 전 준비를 순서대로 정리했습니다.</description>
-    </item>
-    <item>
-      <title>단풍 시기, 첫 단풍과 절정 중 언제 갈까</title>
-      <link>https://kkimsae.com/season/autumn-foliage-timing.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/autumn-foliage-timing.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>단풍 여행 날짜는 첫 단풍과 절정을 구분해 잡아야 합니다. 산 전체의 20%와 80%가 뜻하는 차이, 작년 날짜를 그대로 쓰면 안 되는 이유, 기상청 관측 사진으로 출발 전 확인하는 순서를 정리했습니다.</description>
     </item>
   </channel>
 </rss>
