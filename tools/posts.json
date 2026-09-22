@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "leather-jacket-care",
+      "category": "daily",
+      "date": "2026-09-22",
+      "title": "가죽자켓 세탁, 집에서 닦아도 되는 범위는?",
+      "description": "가을에 꺼낸 가죽자켓, 집에서 닦아도 될까요? 브랜드 관리 안내를 바탕으로 가죽과 스웨이드의 부분 관리, 전문 세탁을 맡길 경우와 보관 방법을 구분했습니다.",
+      "tags": [
+        "가죽자켓 세탁",
+        "가죽자켓 관리",
+        "스웨이드 관리",
+        "가죽자켓 보관"
+      ],
+      "image": {
+        "src": "/img/leather-jacket-care-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "suneung-watch-rules",
       "category": "season",
       "date": "2026-09-22",
