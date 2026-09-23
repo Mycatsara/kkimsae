@@ -5,8 +5,24 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>텐트 결로 방지, 환기구와 플라이부터 확인해요</title>
+      <link>https://kkimsae.com/season/tent-condensation.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/tent-condensation.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>가을 캠핑 아침에 텐트 안쪽이 축축하다면 환기구와 플라이부터 살펴보세요. 제조사 안내를 바탕으로 이너 간격, 젖은 짐 정리, 물기 제거와 철수 후 건조 순서를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>송편 보관법, 남은 송편 소분부터 해동까지</title>
+      <link>https://kkimsae.com/daily/songpyeon-storage.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/songpyeon-storage.html</guid>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>남은 송편을 어떻게 보관할지 고민이라면 제품 상태부터 확인해보세요. 이미 찐 송편의 소분·냉동 방법과 시판 제품 표시 확인, 안전한 해동과 재가열 순서를 구분해 정리했습니다.</description>
+    </item>
     <item>
       <title>가죽자켓 세탁, 집에서 닦아도 되는 범위는?</title>
       <link>https://kkimsae.com/daily/leather-jacket-care.html</link>
@@ -150,22 +166,6 @@
       <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>추석 차례상을 간소하게 준비하고 싶다면 음식 목록부터 정해 보세요. 성균관 안내에 나온 기본 음식과 전을 생략하는 기준, 과일 네 종류를 포함한 가짓수, 가족과 상의할 준비 순서를 정리했습니다.</description>
-    </item>
-    <item>
-      <title>벌초 대행 신청, 견적 전에 준비할 5가지</title>
-      <link>https://kkimsae.com/season/grave-mowing-service.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/grave-mowing-service.html</guid>
-      <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>벌초 대행을 처음 맡긴다면 묘지가 있는 지역부터 확인하세요. 농협·산림조합에 문의하는 순서와 견적 전에 준비할 묘지 정보, 작업 범위와 결과 사진까지 확인할 항목을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>연금저축 IRP 차이, 가입 전에 중도인출부터 비교하세요</title>
-      <link>https://kkimsae.com/money/pension-savings-vs-irp.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/money/pension-savings-vs-irp.html</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>경제·금융</category>
-      <description>연금저축과 IRP는 가입 대상과 중도인출 조건이 다릅니다. 연금저축펀드 기준 비교표, 공제 대상 납입액 600만·900만원의 의미, 연말에 돈을 넣기 전 확인할 질문을 정리했습니다.</description>
     </item>
   </channel>
 </rss>

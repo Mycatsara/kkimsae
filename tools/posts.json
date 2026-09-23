@@ -4,6 +4,41 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "tent-condensation",
+      "category": "season",
+      "date": "2026-09-23",
+      "title": "텐트 결로 방지, 환기구와 플라이부터 확인해요",
+      "description": "가을 캠핑 아침에 텐트 안쪽이 축축하다면 환기구와 플라이부터 살펴보세요. 제조사 안내를 바탕으로 이너 간격, 젖은 짐 정리, 물기 제거와 철수 후 건조 순서를 정리했습니다.",
+      "tags": [
+        "텐트 결로",
+        "텐트 환기",
+        "플라이 설치",
+        "텐트 건조"
+      ],
+      "image": {
+        "src": "/img/tent-condensation-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
+      "slug": "songpyeon-storage",
+      "category": "daily",
+      "date": "2026-09-23",
+      "title": "송편 보관법, 남은 송편 소분부터 해동까지",
+      "description": "남은 송편을 어떻게 보관할지 고민이라면 제품 상태부터 확인해보세요. 이미 찐 송편의 소분·냉동 방법과 시판 제품 표시 확인, 안전한 해동과 재가열 순서를 구분해 정리했습니다.",
+      "tags": [
+        "송편 보관",
+        "송편 냉동",
+        "송편 해동"
+      ],
+      "image": {
+        "src": "/img/songpyeon-storage-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "leather-jacket-care",
       "category": "daily",
       "date": "2026-09-22",
