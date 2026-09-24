@@ -8,6 +8,14 @@
     <lastBuildDate>Thu, 24 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>등산스틱 사용법, 길이 조절부터 내리막까지</title>
+      <link>https://kkimsae.com/daily/trekking-pole-use.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/trekking-pole-use.html</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>가을 산행을 앞두고 등산스틱을 꺼냈다면 길이부터 맞춰보세요. 평지에서 팔꿈치 각도를 잡는 법, 손목끈을 끼우는 순서, 오르막·내리막 조절과 잠금 확인까지 짚어드립니다.</description>
+    </item>
+    <item>
       <title>동궁과 월지 야경, 입장시간·주차부터 확인하세요</title>
       <link>https://kkimsae.com/season/donggung-wolji-night.html</link>
       <guid isPermaLink="true">https://kkimsae.com/season/donggung-wolji-night.html</guid>
@@ -158,14 +166,6 @@
       <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>어린이집이나 야외 행사에 입을 할로윈 의상을 고른다면 디자인 다음으로 기장과 움직임을 확인해 보세요. 사이즈 비교, 가면의 시야, 소품 재질과 겉옷까지 구매 전에 살필 다섯 가지 기준을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>롤드컵 경기 방식, 스위스 스테이지부터 결승까지</title>
-      <link>https://kkimsae.com/game/worlds-format.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/game/worlds-format.html</guid>
-      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
-      <category>게임</category>
-      <description>롤드컵을 처음 본다면 스위스 스테이지의 3승과 경기 중 세트 점수부터 구분해 보세요. 플레이인부터 결승까지 이어지는 방식, BO1·BO3·BO5의 차이와 공식 경기표 확인 순서를 정리했습니다.</description>
     </item>
   </channel>
 </rss>

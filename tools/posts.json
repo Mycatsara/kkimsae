@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "trekking-pole-use",
+      "category": "daily",
+      "date": "2026-09-24",
+      "title": "등산스틱 사용법, 길이 조절부터 내리막까지",
+      "description": "가을 산행을 앞두고 등산스틱을 꺼냈다면 길이부터 맞춰보세요. 평지에서 팔꿈치 각도를 잡는 법, 손목끈을 끼우는 순서, 오르막·내리막 조절과 잠금 확인까지 짚어드립니다.",
+      "tags": [
+        "등산스틱",
+        "가을등산",
+        "등산준비"
+      ],
+      "image": {
+        "src": "/img/trekking-pole-use-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "donggung-wolji-night",
       "category": "season",
       "date": "2026-09-24",
