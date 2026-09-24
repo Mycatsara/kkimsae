@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "running-shoe-replacement",
+      "category": "daily",
+      "date": "2026-09-24",
+      "title": "러닝화 교체 주기, 거리와 마모를 함께 확인해요",
+      "description": "다시 달리려고 꺼낸 러닝화, 계속 신어도 될까요? 제조사의 일반 거리 안내와 겉창·중창·갑피 점검 항목을 구분하고, 신발별 누적 거리를 기록하는 방법을 정리했습니다.",
+      "tags": [
+        "러닝화 교체 주기",
+        "러닝화 수명",
+        "러닝화 마모"
+      ],
+      "image": {
+        "src": "/img/running-shoe-replacement-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "tent-condensation",
       "category": "season",
       "date": "2026-09-23",
