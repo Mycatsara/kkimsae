@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "donggung-wolji-night",
+      "category": "season",
+      "date": "2026-09-24",
+      "title": "동궁과 월지 야경, 입장시간·주차부터 확인하세요",
+      "description": "가을 경주 여행에서 동궁과 월지 야경을 볼 계획인가요? 관람시간과 매표 마감, 무료주차장 위치, 월정교를 함께 둘러볼 때 따로 잡아야 할 이동시간을 정리했습니다.",
+      "tags": [
+        "동궁과 월지 야경",
+        "동궁과 월지 입장시간",
+        "동궁과 월지 주차장",
+        "경주 야경"
+      ],
+      "image": {
+        "src": "/img/donggung-wolji-night-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "shine-muscat-storage",
       "category": "daily",
       "date": "2026-09-24",
