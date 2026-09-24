@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "shine-muscat-storage",
+      "category": "daily",
+      "date": "2026-09-24",
+      "title": "샤인머스켓 보관법, 씻기 전과 후를 나눠두세요",
+      "description": "선물 받거나 한 박스 산 샤인머스켓, 전부 씻어서 넣어도 될까요? 냉장할 분량과 냉동할 분량을 나누고 먹기 전 세척, 물기 제거, 냉동 준비 순서를 확인해보세요.",
+      "tags": [
+        "샤인머스켓 보관",
+        "샤인머스켓 세척",
+        "샤인머스켓 냉동"
+      ],
+      "image": {
+        "src": "/img/shine-muscat-storage-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "running-shoe-replacement",
       "category": "daily",
       "date": "2026-09-24",
