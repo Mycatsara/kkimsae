@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "suncheon-bay-wetland-ticket",
+      "category": "season",
+      "date": "2026-09-25",
+      "title": "순천만습지 입장료, 국가정원까지 함께 볼 수 있을까",
+      "description": "순천만습지와 국가정원은 일반 입장권 한 장으로 같은 날 둘러볼 수 있어요. 야간권의 예외부터 주차비, 스카이큐브 추가 요금, 가을 입장 마감시간까지 방문 전에 확인해보세요.",
+      "tags": [
+        "순천만습지 입장료",
+        "순천만국가정원",
+        "순천만습지 주차",
+        "가을 여행"
+      ],
+      "image": {
+        "src": "/img/suncheon-bay-wetland-ticket-01.webp",
+        "w": 720,
+        "h": 480
+      }
+    },
+    {
       "slug": "knitwear-washing",
       "category": "daily",
       "date": "2026-09-25",
