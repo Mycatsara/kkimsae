@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "knitwear-washing",
+      "category": "daily",
+      "date": "2026-09-25",
+      "title": "니트 세탁, 세탁기에 넣어도 되는지 먼저 확인해요",
+      "description": "가을 니트를 꺼냈는데 세탁기에 넣어도 될지 고민된다면 옷 안쪽 라벨부터 확인하세요. 기계세탁과 손세탁을 구분하는 순서, 울 세제 선택, 늘어짐을 줄이는 평건조 방법을 정리했습니다.",
+      "tags": [
+        "니트 세탁",
+        "니트 세탁기",
+        "니트 손세탁",
+        "니트 건조"
+      ],
+      "image": {
+        "src": "/img/knitwear-washing-01.webp",
+        "w": 900,
+        "h": 1350
+      }
+    },
+    {
       "slug": "haneul-park-silver-grass",
       "category": "season",
       "date": "2026-09-25",
