@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 24 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>하늘공원 억새 보러 가기 전, 주차와 올라가는 길</title>
+      <link>https://kkimsae.com/season/haneul-park-silver-grass.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/haneul-park-silver-grass.html</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>하늘공원 억새 나들이를 준비한다면 주차 후 올라가는 길까지 정해두세요. 난지천공원·평화의공원 주차장, 계단과 맹꽁이 전동차 선택, 9월과 10월 운행시간 차이를 정리했습니다.</description>
+    </item>
     <item>
       <title>등산스틱 사용법, 길이 조절부터 내리막까지</title>
       <link>https://kkimsae.com/daily/trekking-pole-use.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>가을 제철 음식을 샀다가 보관이 고민된다면 고구마·밤·사과부터 구분해 보세요. 장볼 때 확인할 상태, 냉장고에 넣을 것과 따로 둘 것, 먹을 양에 맞춰 구매하는 순서를 정리했습니다.</description>
-    </item>
-    <item>
-      <title>할로윈 의상, 아이가 입을 옷 고르는 5가지 기준</title>
-      <link>https://kkimsae.com/season/halloween-costume.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/halloween-costume.html</guid>
-      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>어린이집이나 야외 행사에 입을 할로윈 의상을 고른다면 디자인 다음으로 기장과 움직임을 확인해 보세요. 사이즈 비교, 가면의 시야, 소품 재질과 겉옷까지 구매 전에 살필 다섯 가지 기준을 정리했습니다.</description>
     </item>
   </channel>
 </rss>

@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "haneul-park-silver-grass",
+      "category": "season",
+      "date": "2026-09-25",
+      "title": "하늘공원 억새 보러 가기 전, 주차와 올라가는 길",
+      "description": "하늘공원 억새 나들이를 준비한다면 주차 후 올라가는 길까지 정해두세요. 난지천공원·평화의공원 주차장, 계단과 맹꽁이 전동차 선택, 9월과 10월 운행시간 차이를 정리했습니다.",
+      "tags": [
+        "하늘공원 억새",
+        "하늘공원 주차",
+        "하늘공원 가는길",
+        "맹꽁이 전동차"
+      ],
+      "image": {
+        "src": "/img/haneul-park-silver-grass-01.webp",
+        "w": 720,
+        "h": 480
+      }
+    },
+    {
       "slug": "trekking-pole-use",
       "category": "daily",
       "date": "2026-09-24",
