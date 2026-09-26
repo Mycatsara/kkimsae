@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 25 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>쭈꾸미 낚시 물때, 초보자는 조금과 사리를 어떻게 볼까</title>
+      <link>https://kkimsae.com/season/webfoot-octopus-fishing-tides.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/webfoot-octopus-fishing-tides.html</guid>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>첫 쭈꾸미 배낚시 날짜를 고른다면 조금과 사리의 차이부터 살펴보세요. 보령 물때표의 실제 예시로 만조·간조 읽는 법을 익히고, 바다 날씨와 선사에 확인할 내용까지 정리했습니다.</description>
+    </item>
     <item>
       <title>순천만습지 입장료, 국가정원까지 함께 볼 수 있을까</title>
       <link>https://kkimsae.com/season/suncheon-bay-wetland-ticket.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
       <category>게임</category>
       <description>지스타 첫 방문을 준비한다면 일반 관람용 BTC와 비즈니스용 BTB부터 구분해 보세요. G-CON과의 차이, 올해 행사 일정, 예매 안내에서 확인할 항목과 방문 계획 순서를 정리했습니다.</description>
-    </item>
-    <item>
-      <title>가을 캠핑 준비물, 첫 1박은 잠자리부터 챙겨요</title>
-      <link>https://kkimsae.com/season/autumn-camping.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/autumn-camping.html</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>가을 첫 1박 캠핑을 준비한다면 먹거리보다 밤에 잘 장비부터 확인해 보세요. 침낭과 매트의 차이, 마른 옷과 조명 준비, 출발 전 장비 점검과 텐트 안 화기 주의사항을 정리했습니다.</description>
     </item>
   </channel>
 </rss>

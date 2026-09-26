@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "webfoot-octopus-fishing-tides",
+      "category": "season",
+      "date": "2026-09-26",
+      "title": "쭈꾸미 낚시 물때, 초보자는 조금과 사리를 어떻게 볼까",
+      "description": "첫 쭈꾸미 배낚시 날짜를 고른다면 조금과 사리의 차이부터 살펴보세요. 보령 물때표의 실제 예시로 만조·간조 읽는 법을 익히고, 바다 날씨와 선사에 확인할 내용까지 정리했습니다.",
+      "tags": [
+        "쭈꾸미 물때",
+        "쭈꾸미낚시 물때",
+        "조금 사리",
+        "배낚시 날짜"
+      ],
+      "image": {
+        "src": "/img/webfoot-octopus-fishing-tides-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "suncheon-bay-wetland-ticket",
       "category": "season",
       "date": "2026-09-25",
