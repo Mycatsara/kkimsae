@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "hwadam-forest-monorail",
+      "category": "season",
+      "date": "2026-09-26",
+      "title": "화담숲 모노레일, 1구간·2구간·순환 어떻게 고를까",
+      "description": "화담숲 모노레일 1구간·2구간·순환의 요금과 탑승 시간, 내린 뒤 남는 도보 시간을 비교했어요. 부모님과 방문할 때 살펴볼 입석 운행과 중간 하차 후 재탑승 제한도 함께 확인해 보세요.",
+      "tags": [
+        "화담숲",
+        "모노레일",
+        "가을여행"
+      ],
+      "image": {
+        "src": "/img/hwadam-forest-monorail-01.webp",
+        "w": 720,
+        "h": 480
+      }
+    },
+    {
       "slug": "webfoot-octopus-fishing-tides",
       "category": "season",
       "date": "2026-09-26",
