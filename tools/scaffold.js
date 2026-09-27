@@ -85,6 +85,7 @@ ${L.CATS.map((c) => `<li><a href="/${c.slug}/">${L.esc(c.name)}</a> — ${L.esc(
 </article>`,
 }));
 
-L.write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /search.html\n\nSitemap: ${L.SITE.url}/sitemap.xml\n`);
+L.write("robots.txt", `#DaumWebMasterTool:2ae6fcaf614379d2e4ece8cfcdd23d2388a53b44eb08ffa53184a4f39fc34e81:8NlEA5zh8WXgoRgf+MLlog==
+User-agent: *\nAllow: /\nDisallow: /search.html\n\nSitemap: ${L.SITE.url}/sitemap.xml\n`);
 
 console.log("뼈대 생성: index.html, " + L.CATS.map((c) => `${c.slug}/index.html`).join(", ") + ", search.html, 404.html, robots.txt → 이어서 node tools/buildlist.js");

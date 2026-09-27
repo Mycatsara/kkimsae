@@ -1,3 +1,4 @@
+#DaumWebMasterTool:2ae6fcaf614379d2e4ece8cfcdd23d2388a53b44eb08ffa53184a4f39fc34e81:8NlEA5zh8WXgoRgf+MLlog==
 User-agent: *
 Allow: /
 Disallow: /search.html
