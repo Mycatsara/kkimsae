@@ -4,6 +4,58 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "seoraksan-cable-car-ticket",
+      "category": "season",
+      "date": "2026-09-27",
+      "title": "설악산 케이블카 예약, 출발 전에 알아둘 현장 발권 안내",
+      "description": "설악산 케이블카는 사전예약 없이 당일 현장에서 발권해요. 왕복요금과 가을 경로우대 제외 기간, 주차·유모차·하산 조건까지 출발 전에 확인해보세요.",
+      "tags": [
+        "설악산 케이블카 예약",
+        "설악산 케이블카 요금",
+        "권금성"
+      ],
+      "image": {
+        "src": "/img/seoraksan-cable-car-ticket-01.webp",
+        "w": 1200,
+        "h": 792
+      }
+    },
+    {
+      "slug": "taishu-persimmon-season",
+      "category": "season",
+      "date": "2026-09-27",
+      "title": "태추단감 수확시기, 언제 사고 어떻게 보관할까",
+      "description": "태추단감 수확시기를 찾고 있다면 품종의 일반 숙기와 판매처의 실제 출고일을 나눠 보세요. 주문 전 확인할 내용과 단감의 냉장 보관 방법을 정리했어요.",
+      "tags": [
+        "태추단감",
+        "태추단감 수확시기",
+        "단감 보관"
+      ],
+      "image": {
+        "src": "/img/taishu-persimmon-season-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
+      "slug": "blue-crab-cleaning",
+      "category": "daily",
+      "date": "2026-09-27",
+      "title": "꽃게 손질법, 찜과 탕은 어디까지 다를까",
+      "description": "꽃게를 통째로 찔 때와 탕에 넣을 때는 손질을 끝내는 단계가 달라요. 솔로 씻는 순서부터 등딱지·아가미·모래주머니 처리까지 요리에 맞춰 정리했어요.",
+      "tags": [
+        "꽃게 손질법",
+        "꽃게찜",
+        "꽃게탕",
+        "가을 제철음식"
+      ],
+      "image": {
+        "src": "/img/blue-crab-cleaning-01.webp",
+        "w": 1200,
+        "h": 1800
+      }
+    },
+    {
       "slug": "hwadam-forest-monorail",
       "category": "season",
       "date": "2026-09-26",

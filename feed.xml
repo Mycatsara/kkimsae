@@ -5,8 +5,32 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 26 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>설악산 케이블카 예약, 출발 전에 알아둘 현장 발권 안내</title>
+      <link>https://kkimsae.com/season/seoraksan-cable-car-ticket.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/seoraksan-cable-car-ticket.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>설악산 케이블카는 사전예약 없이 당일 현장에서 발권해요. 왕복요금과 가을 경로우대 제외 기간, 주차·유모차·하산 조건까지 출발 전에 확인해보세요.</description>
+    </item>
+    <item>
+      <title>태추단감 수확시기, 언제 사고 어떻게 보관할까</title>
+      <link>https://kkimsae.com/season/taishu-persimmon-season.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/taishu-persimmon-season.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>태추단감 수확시기를 찾고 있다면 품종의 일반 숙기와 판매처의 실제 출고일을 나눠 보세요. 주문 전 확인할 내용과 단감의 냉장 보관 방법을 정리했어요.</description>
+    </item>
+    <item>
+      <title>꽃게 손질법, 찜과 탕은 어디까지 다를까</title>
+      <link>https://kkimsae.com/daily/blue-crab-cleaning.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/blue-crab-cleaning.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>꽃게를 통째로 찔 때와 탕에 넣을 때는 손질을 끝내는 단계가 달라요. 솔로 씻는 순서부터 등딱지·아가미·모래주머니 처리까지 요리에 맞춰 정리했어요.</description>
+    </item>
     <item>
       <title>화담숲 모노레일, 1구간·2구간·순환 어떻게 고를까</title>
       <link>https://kkimsae.com/season/hwadam-forest-monorail.html</link>
@@ -142,30 +166,6 @@
       <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>남당항 대하축제의 무료 안내를 식사까지 무료라는 뜻으로 읽지 마세요. 올해 행사 기간과 입장·먹거리·체험 비용 구분, 현지 식사와 포장 선택, 출발 전에 확인할 이동 정보를 정리했습니다.</description>
-    </item>
-    <item>
-      <title>가을 코디, 아침저녁과 낮을 나눠 입는 법</title>
-      <link>https://kkimsae.com/daily/autumn-outfit-layers.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/autumn-outfit-layers.html</guid>
-      <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>아침에는 서늘하고 낮에는 더워 가을 코디가 고민이라면, 겉옷을 벗었을 때부터 생각해 보세요. 출퇴근 시간별 날씨 확인과 가진 옷으로 만드는 조합, 겉옷의 여유와 휴대성 점검 순서를 정리했습니다.</description>
-    </item>
-    <item>
-      <title>정읍 구절초 축제, 입장료·주차부터 확인해요</title>
-      <link>https://kkimsae.com/season/gujeolcho-visit.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/gujeolcho-visit.html</guid>
-      <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>정읍 구절초 축제에 처음 간다면 입장료와 정원사랑 상품권을 구분해 보세요. 올해 행사 기간과 매표시간, 주차장 안내, 개화상황 확인 방법과 출발 전에 챙길 내용을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>등산화 고르는 법, 가을 산행 전 사이즈부터 확인해요</title>
-      <link>https://kkimsae.com/daily/hiking-boots-fit.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/hiking-boots-fit.html</guid>
-      <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>가을 산행용 등산화를 처음 산다면 평소 운동화 치수만으로 고르지 마세요. 코스와 짐에 맞는 형태, 실제 양말을 신고 발끝·발볼·뒤꿈치를 확인하는 순서와 구매 전 점검표를 정리했습니다.</description>
     </item>
   </channel>
 </rss>
