@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "hadong-samseonggung-visit",
+      "category": "season",
+      "date": "2026-09-27",
+      "title": "하동 삼성궁, 입장료와 걷는 길부터 확인해요",
+      "description": "하동 삼성궁의 개인 입장료, 16시 40분 입장 마감, 무료 주차장과 돌길·계단을 확인해요. 가족과 처음 방문할 때 비용과 걷는 시간을 함께 준비하세요.",
+      "tags": [
+        "하동 삼성궁",
+        "삼성궁 입장료",
+        "삼성궁 주차",
+        "삼성궁 소요시간"
+      ],
+      "image": {
+        "src": "/img/hadong-samseonggung-visit-01.webp",
+        "w": 640,
+        "h": 799
+      }
+    },
+    {
       "slug": "seoraksan-cable-car-ticket",
       "category": "season",
       "date": "2026-09-27",
