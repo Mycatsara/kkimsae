@@ -51,9 +51,10 @@
       ],
       "image": {
         "src": "/img/blue-crab-cleaning-01.webp",
-        "w": 1200,
-        "h": 1800
-      }
+        "w": 1000,
+        "h": 1000
+      },
+      "modified": "2026-09-27"
     },
     {
       "slug": "hwadam-forest-monorail",
