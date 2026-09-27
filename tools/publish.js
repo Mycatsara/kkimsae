@@ -7,12 +7,12 @@
 //   node tools/publish.js <원고.md> --rebuild        틀(머리·사이드바 등)만 바뀐 뒤 HTML 재생성 — 게시일·수정일 모두 유지
 // 원고 머리말: title, slug, category(경제·금융|이맘때|게임|일상 — 또는 슬러그 money|season|game|daily), tags, description, images(원고 폴더 기준 상대경로)
 // 이미지: PNG/JPG/WEBP → 폭 1200 webp(300KB 이하)로 압축해 /img/에 둔다(sharp). 원본은 원고 폴더(비공개)에 그대로.
-// 하루 상한: 2026-09-24부터 낌새는 5편. 같은 게시일에 이미 5편이면 중단한다.
+// 하루 상한: 2026-09-28 운영자 결정으로 애드센스 결과까지 낌새 새 글 2편(9/24 5편 대체). 같은 게시일에 이미 2편이면 중단한다.
 const fs = require("fs");
 const path = require("path");
 const L = require("./lib");
 
-const DAILY_MAX = 5; // 2026-09-24 운영자 결정: 낌새 하루 4~5편, 상한 5편
+const DAILY_MAX = 2; // 2026-09-28 운영자 결정: 애드센스 결과까지 새 글 2편(그중 1편은 보강 --update 권장)
 const MAX_BYTES = 300 * 1024;
 const WIDTH = 1200;
 

@@ -95,14 +95,15 @@ test("card: 대표 이미지 → 제목 → 날짜 → 설명 → 카테고리 �
   assert.match(h, /<span class="chip">게임<\/span>\s*<\/a>$/);
 });
 
-test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개·개인정보처리방침·연락), 바닥에 RSS 링크 없음", () => {
+test("header·footer: 메뉴 오른쪽에 카테고리 4 + 소개 펼침(소개·개인정보처리방침·연락), 바닥에 소개·개인정보·연락 한 줄(9/28), RSS 링크 없음", () => {
   const h = L.header("privacy");
   assert.match(h, /<details class="dd" open><summary class="on">소개<\/summary>/);
   assert.match(h, /<a href="\/privacy.html" class="on">개인정보처리방침<\/a>/);
   assert.match(h, /<a href="\/">홈<\/a><a href="\/money\/">경제·금융<\/a>/);
   assert.match(L.header("home"), /<a href="\/" class="on">홈<\/a>/);
   const f = L.footer();
-  assert.doesNotMatch(f, /feed\.xml|RSS|<a /);
+  assert.doesNotMatch(f, /feed\.xml|RSS/);
+  assert.match(f, /<p class="copy foot-links"><a href="\/about.html">소개<\/a> · <a href="\/privacy.html">개인정보처리방침<\/a> · <a href="\/contact.html">연락<\/a><\/p>/);
   assert.match(f, /© 2026 낌새/);
 });
 

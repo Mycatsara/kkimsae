@@ -143,7 +143,7 @@ function head({ title, description, url, image, type = "website", jsonld = [], n
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(full)}</title>
-<meta name="description" content="${esc(description)}">${noindex ? '\n<meta name="robots" content="noindex">' : ""}
+<meta name="description" content="${esc(description)}">${noindex ? '\n<meta name="robots" content="noindex">' : '\n<meta name="robots" content="max-image-preview:large">'}
 <link rel="canonical" href="${abs}">
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${SITE.name}">
@@ -156,13 +156,14 @@ function head({ title, description, url, image, type = "website", jsonld = [], n
 <meta name="twitter:card" content="summary_large_image">
 <meta name="google-site-verification" content="${SITE.google}">
 <meta name="naver-site-verification" content="${SITE.naver}">
+<meta name="google-adsense-account" content="ca-pub-4428587485814712">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
 <link rel="alternate" type="application/rss+xml" title="${SITE.name}" href="${SITE.url}/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260919">
+<link rel="stylesheet" href="/assets/style.css?v=20260928">
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join("\n")}
 <script>
 (function(){
@@ -190,8 +191,9 @@ function header(active = "") {
 }
 
 function footer() {
-  // 바닥은 저작권 한 줄만 — 소개·개인정보·연락 링크는 머리의 "소개" 펼침 메뉴로 옮김(9/6 운영자 요청)
+  // 9/6 운영자 요청으로 링크를 머리 "소개" 펼침 메뉴로 옮겼다가, 2026-09-28 운영자 결정으로 바닥에 작은 글씨 한 줄을 되살림(애드센스 심사자가 찾기 쉽게)
   return `<footer class="site">
+  <p class="copy foot-links">${INFO_PAGES.map((p) => `<a href="${p.href}">${p.name}</a>`).join(" · ")}</p>
   <p class="copy">© 2026 ${SITE.name} · ${SITE.tagline}</p>
 </footer>`;
 }
