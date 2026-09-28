@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>전기장판 세탁, 세탁기 사용 조건과 건조 주의사항</title>
+      <link>https://kkimsae.com/daily/electric-blanket-washing.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/electric-blanket-washing.html</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>전기장판 세탁은 제품별 허용 조건이 달라요. 보이러 UB33의 30℃ 울코스와 브루클린웍스의 찬물·탈수 금지 안내를 비교하고, 조절기 분리부터 완전 건조까지 짚어봅니다.</description>
+    </item>
     <item>
       <title>하동 삼성궁, 입장료와 걷는 길부터 확인해요</title>
       <link>https://kkimsae.com/season/hadong-samseonggung-visit.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>경량패딩의 필파워가 높으면 더 따뜻할까요? 다운 충전량과 제품 전체 무게의 차이, 겉옷·이너 용도, 상세페이지에서 빠진 정보를 확인하는 순서까지 정리했습니다.</description>
-    </item>
-    <item>
-      <title>쭈꾸미낚시 처음이라면, 예약 전에 확인할 5가지</title>
-      <link>https://kkimsae.com/season/webfoot-octopus-fishing-prep.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/webfoot-octopus-fishing-prep.html</guid>
-      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>쭈꾸미 배낚시가 처음이라면 장비부터 사기 전에 예약 조건을 확인해 보세요. 집결 장소, 선비 포함 항목, 장비 대여, 기상 취소, 안전 준비까지 다섯 갈래로 정리했습니다.</description>
     </item>
   </channel>
 </rss>

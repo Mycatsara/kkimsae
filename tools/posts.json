@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "electric-blanket-washing",
+      "category": "daily",
+      "date": "2026-09-28",
+      "title": "전기장판 세탁, 세탁기 사용 조건과 건조 주의사항",
+      "description": "전기장판 세탁은 제품별 허용 조건이 달라요. 보이러 UB33의 30℃ 울코스와 브루클린웍스의 찬물·탈수 금지 안내를 비교하고, 조절기 분리부터 완전 건조까지 짚어봅니다.",
+      "tags": [
+        "전기장판 세탁",
+        "전기장판 세탁기",
+        "전기요 세탁",
+        "전기장판 건조"
+      ],
+      "image": {
+        "src": "/img/electric-blanket-washing-01.webp",
+        "w": 1100,
+        "h": 1100
+      }
+    },
+    {
       "slug": "hadong-samseonggung-visit",
       "category": "season",
       "date": "2026-09-27",
