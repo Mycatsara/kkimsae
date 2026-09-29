@@ -4,6 +4,24 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "mindungsan-parking",
+      "category": "season",
+      "date": "2026-09-29",
+      "title": "민둥산 주차장, 발구덕 통제와 셔틀 중단 안내",
+      "description": "민둥산 주차장은 운동장·능전 두 곳을 기준으로 잡으세요. 2026년 9월 18일~11월 8일 발구덕 차량 통제와 연계 셔틀 중단, 주차 후 등산 출발점을 구분해 안내합니다.",
+      "tags": [
+        "민둥산 주차장",
+        "민둥산 발구덕",
+        "민둥산 셔틀",
+        "민둥산 억새"
+      ],
+      "image": {
+        "src": "/img/mindungsan-parking-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
       "slug": "electric-blanket-washing",
       "category": "daily",
       "date": "2026-09-28",
