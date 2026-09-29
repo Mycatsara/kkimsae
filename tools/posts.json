@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "ginkgo-nut-storage",
+      "category": "daily",
+      "date": "2026-09-29",
+      "title": "은행 보관법, 껍질 있는 은행과 깐 은행 구분하기",
+      "description": "은행 보관법은 껍질 상태와 제품의 보관 표시를 구분하는 데서 시작해요. 껍질 있는 은행·깐 은행·냉동제품을 나눠 담고, 소분과 날짜 표시부터 먹기 전 주의할 점까지 정리했습니다.",
+      "tags": [
+        "은행 보관법",
+        "깐 은행",
+        "은행 냉동보관"
+      ],
+      "image": {
+        "src": "/img/ginkgo-nut-storage-01.webp",
+        "w": 1100,
+        "h": 1100
+      }
+    },
+    {
       "slug": "mindungsan-parking",
       "category": "season",
       "date": "2026-09-29",
