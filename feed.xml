@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 29 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>내장산 케이블카 가격, 왕복·편도와 할인 조건 정리</title>
+      <link>https://kkimsae.com/season/naejangsan-cable-car-price.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/season/naejangsan-cable-car-price.html</guid>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+      <category>이맘때</category>
+      <description>내장산 케이블카 가격은 대인 왕복 11,000원, 편도 7,000원입니다. 소인·할인 조건과 당일 발권, 걸어 내려올 때의 환불 제한, 단풍철 차량 통제까지 정리했어요.</description>
+    </item>
     <item>
       <title>은행 보관법, 껍질 있는 은행과 깐 은행 구분하기</title>
       <link>https://kkimsae.com/daily/ginkgo-nut-storage.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>가을에 꺼낸 가죽자켓, 집에서 닦아도 될까요? 브랜드 관리 안내를 바탕으로 가죽과 스웨이드의 부분 관리, 전문 세탁을 맡길 경우와 보관 방법을 구분했습니다.</description>
-    </item>
-    <item>
-      <title>수능 시계 규정, 사기 전에 확인할 기능</title>
-      <link>https://kkimsae.com/season/suneung-watch-rules.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/suneung-watch-rules.html</guid>
-      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>수능용 시계는 아날로그라는 이름만 보면 될까요? 2027학년도 공식 규정과 제조사 사양을 바탕으로 전자화면·통신 기능, 착용감 확인 순서를 정리했습니다.</description>
     </item>
   </channel>
 </rss>

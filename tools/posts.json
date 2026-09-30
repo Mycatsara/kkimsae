@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "naejangsan-cable-car-price",
+      "category": "season",
+      "date": "2026-09-30",
+      "title": "내장산 케이블카 가격, 왕복·편도와 할인 조건 정리",
+      "description": "내장산 케이블카 가격은 대인 왕복 11,000원, 편도 7,000원입니다. 소인·할인 조건과 당일 발권, 걸어 내려올 때의 환불 제한, 단풍철 차량 통제까지 정리했어요.",
+      "tags": [
+        "내장산 케이블카 가격",
+        "내장산 케이블카 예약",
+        "내장산 단풍"
+      ],
+      "image": {
+        "src": "/img/naejangsan-cable-car-price-01.webp",
+        "w": 1200,
+        "h": 800
+      }
+    },
+    {
       "slug": "ginkgo-nut-storage",
       "category": "daily",
       "date": "2026-09-29",
