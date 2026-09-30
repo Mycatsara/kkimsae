@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "juwangsan-sangui-parking",
+      "category": "season",
+      "date": "2026-10-01",
+      "title": "주왕산 상의주차장, 주차요금과 용추폭포 걷는 길",
+      "description": "주왕산 상의주차장은 10월 1일~11월 15일 소형차 5,000원입니다. 평일에도 적용되는 요금과 용추폭포 편도 2.7km, 돌아오는 시간까지 정리했어요.",
+      "tags": [
+        "주왕산 상의주차장",
+        "주왕산 주차요금",
+        "주왕산 용추폭포"
+      ],
+      "image": {
+        "src": "/img/juwangsan-sangui-parking-01.webp",
+        "w": 1000,
+        "h": 667
+      }
+    },
+    {
       "slug": "humidifier-cleaning",
       "category": "daily",
       "date": "2026-09-30",
