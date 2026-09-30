@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "humidifier-cleaning",
+      "category": "daily",
+      "date": "2026-09-30",
+      "title": "가습기 청소, 물통·필터·본체는 어떻게 씻을까",
+      "description": "가습기 청소는 물통·필터·본체의 세척법을 나눠야 해요. 주 1회 이상 청소를 안내한 LG 제품 사례로 구연산 사용 조건, 식기세척기 가능 여부, 건조 방법을 정리했어요.",
+      "tags": [
+        "가습기 청소",
+        "가습기 구연산",
+        "가습기 필터 세척"
+      ],
+      "image": {
+        "src": "/img/humidifier-cleaning-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
       "slug": "naejangsan-cable-car-price",
       "category": "season",
       "date": "2026-09-30",
