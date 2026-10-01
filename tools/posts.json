@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "chestnut-freezer-storage",
+      "category": "daily",
+      "date": "2026-10-01",
+      "title": "밤 냉동보관, 생밤·깐밤·삶은 밤은 어떻게 다를까",
+      "description": "밤 냉동보관은 껍질보다 익혔는지를 먼저 구분해요. 간식용은 익혀 껍질을 벗긴 뒤 소분해 -18℃ 이하로 보관하고, 생밤은 해동 후 용도와 식감 차이를 확인하세요.",
+      "tags": [
+        "밤 냉동보관",
+        "생밤 냉동보관",
+        "삶은 밤 냉동보관"
+      ],
+      "image": {
+        "src": "/img/chestnut-freezer-storage-01.webp",
+        "w": 1100,
+        "h": 825
+      }
+    },
+    {
       "slug": "juwangsan-sangui-parking",
       "category": "season",
       "date": "2026-10-01",
