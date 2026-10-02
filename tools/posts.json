@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "puffer-jacket-washing",
+      "category": "daily",
+      "date": "2026-10-02",
+      "title": "패딩 세탁, 세탁기와 건조기 사용 전 확인할 것",
+      "description": "패딩 세탁은 물세탁·기계세탁·건조기 허용 여부 3가지를 따로 확인해야 해요. 손세탁과 드럼세탁 안내의 차이, 세제 선택과 충전재 건조까지 정리했습니다.",
+      "tags": [
+        "패딩 세탁",
+        "패딩 세탁기",
+        "패딩 건조기"
+      ],
+      "image": {
+        "src": "/img/puffer-jacket-washing-01.webp",
+        "w": 800,
+        "h": 1066
+      }
+    },
+    {
       "slug": "chestnut-freezer-storage",
       "category": "daily",
       "date": "2026-10-01",
