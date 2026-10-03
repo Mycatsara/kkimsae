@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "seoul-botanic-park-admission",
+      "category": "season",
+      "date": "2026-10-03",
+      "title": "서울식물원 입장료, 무료 구역과 주차비까지 계산하기",
+      "description": "서울식물원 입장료는 성인 5,000원이며 열린숲·호수원·습지원은 무료입니다. 일행별 주차 포함 비용과 할인 증빙, 10월 휴관일·11월 관람시간을 정리했습니다.",
+      "tags": [
+        "서울식물원 입장료",
+        "서울식물원 주차요금",
+        "서울식물원 무료"
+      ],
+      "image": {
+        "src": "/img/seoul-botanic-park-admission-01.webp",
+        "w": 1200,
+        "h": 900
+      }
+    },
+    {
       "slug": "sweet-potato-refrigeration",
       "category": "daily",
       "date": "2026-10-03",
