@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "daedunsan-cable-car-price",
+      "category": "season",
+      "date": "2026-10-04",
+      "title": "대둔산 케이블카 가격, 왕복·편도와 가족 요금 계산",
+      "description": "대둔산 케이블카 가격은 일반 대인 왕복 16,500원입니다. 가족별 요금 계산과 현장 발권, 2026년 가을 첫차 시간, 주차와 정상까지 걷는 구간을 정리합니다.",
+      "tags": [
+        "대둔산 케이블카 가격",
+        "대둔산 케이블카 왕복",
+        "대둔산 주차"
+      ],
+      "image": {
+        "src": "/img/daedunsan-cable-car-price-01.webp",
+        "w": 960,
+        "h": 640
+      }
+    },
+    {
       "slug": "sleeping-bag-washing",
       "category": "daily",
       "date": "2026-10-04",
