@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "ginger-storage",
+      "category": "daily",
+      "date": "2026-10-05",
+      "title": "생강 보관법, 깐 생강 냉장과 다진 생강 냉동 구분하기",
+      "description": "생강 보관법은 금방 쓸 양과 오래 둘 양을 나누는 데서 시작해요. 깐 생강의 5~7일 냉장 조건, 다진 생강을 납작하게 냉동하는 방법과 용도별 소분·날짜 표시를 정리했어요.",
+      "tags": [
+        "생강 보관법",
+        "깐 생강 보관",
+        "다진 생강 냉동"
+      ],
+      "image": {
+        "src": "/img/ginger-storage-01.webp",
+        "w": 1100,
+        "h": 731
+      }
+    },
+    {
       "slug": "daedunsan-cable-car-price",
       "category": "season",
       "date": "2026-10-04",

@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>생강 보관법, 깐 생강 냉장과 다진 생강 냉동 구분하기</title>
+      <link>https://kkimsae.com/daily/ginger-storage.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/ginger-storage.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>생강 보관법은 금방 쓸 양과 오래 둘 양을 나누는 데서 시작해요. 깐 생강의 5~7일 냉장 조건, 다진 생강을 납작하게 냉동하는 방법과 용도별 소분·날짜 표시를 정리했어요.</description>
+    </item>
     <item>
       <title>대둔산 케이블카 가격, 왕복·편도와 가족 요금 계산</title>
       <link>https://kkimsae.com/season/daedunsan-cable-car-price.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>순천만습지와 국가정원은 일반 입장권 한 장으로 같은 날 둘러볼 수 있어요. 야간권의 예외부터 주차비, 스카이큐브 추가 요금, 가을 입장 마감시간까지 방문 전에 확인해보세요.</description>
-    </item>
-    <item>
-      <title>니트 세탁, 세탁기에 넣어도 되는지 먼저 확인해요</title>
-      <link>https://kkimsae.com/daily/knitwear-washing.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/knitwear-washing.html</guid>
-      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>가을 니트를 꺼냈는데 세탁기에 넣어도 될지 고민된다면 옷 안쪽 라벨부터 확인하세요. 기계세탁과 손세탁을 구분하는 순서, 울 세제 선택, 늘어짐을 줄이는 평건조 방법을 정리했습니다.</description>
     </item>
   </channel>
 </rss>
