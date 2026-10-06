@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>커튼 세탁, 암막커튼 세탁기·건조기 사용 전 확인할 것</title>
+      <link>https://kkimsae.com/daily/curtain-washing.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/curtain-washing.html</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>커튼 세탁은 물세탁과 건조기 허용 여부를 따로 확인해야 해요. 세탁기 30℃가 가능해도 건조기는 금지인 실제 제품 사례부터 후크 분리, 수축을 고려한 밑단 수선 순서까지 정리했어요.</description>
+    </item>
     <item>
       <title>생강 보관법, 깐 생강 냉장과 다진 생강 냉동 구분하기</title>
       <link>https://kkimsae.com/daily/ginger-storage.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>첫 쭈꾸미 배낚시 날짜를 고른다면 조금과 사리의 차이부터 살펴보세요. 보령 물때표의 실제 예시로 만조·간조 읽는 법을 익히고, 바다 날씨와 선사에 확인할 내용까지 정리했습니다.</description>
-    </item>
-    <item>
-      <title>순천만습지 입장료, 국가정원까지 함께 볼 수 있을까</title>
-      <link>https://kkimsae.com/season/suncheon-bay-wetland-ticket.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/suncheon-bay-wetland-ticket.html</guid>
-      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>순천만습지와 국가정원은 일반 입장권 한 장으로 같은 날 둘러볼 수 있어요. 야간권의 예외부터 주차비, 스카이큐브 추가 요금, 가을 입장 마감시간까지 방문 전에 확인해보세요.</description>
     </item>
   </channel>
 </rss>
