@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "suneung-earplugs",
+      "category": "season",
+      "date": "2026-10-07",
+      "title": "수능 귀마개, 매 교시 감독관 확인을 받아야 할까",
+      "description": "수능 귀마개는 매 교시 감독관 점검을 받아야 해요. 2026년 11월 19일 시험에 적용되는 공식 공고를 기준으로 일반 귀마개와 전자식 이어폰의 차이, 영어 듣기 전 준비, 반입 금지 물품 제출 시점을 정리했어요.",
+      "tags": [
+        "수능 귀마개",
+        "수능 귀마개 규정",
+        "수능 반입금지 물품"
+      ],
+      "image": {
+        "src": "/img/suneung-earplugs-01.webp",
+        "w": 1200,
+        "h": 797
+      }
+    },
+    {
       "slug": "curtain-washing",
       "category": "daily",
       "date": "2026-10-06",
