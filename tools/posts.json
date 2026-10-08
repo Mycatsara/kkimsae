@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "kimchi-fridge-defrosting",
+      "category": "daily",
+      "date": "2026-10-08",
+      "title": "김치냉장고 성에 제거, 뚜껑형·스탠드형은 어떻게 다를까",
+      "description": "김치냉장고 성에 제거는 제품 형태와 성에 상태에 따라 달라요. 삼성·LG 공식 안내로 두께별 관리 기준, 칸별 전원 확인, 자연해동 순서와 점검이 필요한 증상을 비교했습니다.",
+      "tags": [
+        "김치냉장고 성에 제거",
+        "뚜껑형 김치냉장고",
+        "김장 준비"
+      ],
+      "image": {
+        "src": "/img/kimchi-fridge-defrosting-01.webp",
+        "w": 800,
+        "h": 1200
+      }
+    },
+    {
       "slug": "suneung-earplugs",
       "category": "season",
       "date": "2026-10-07",

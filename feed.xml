@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>김치냉장고 성에 제거, 뚜껑형·스탠드형은 어떻게 다를까</title>
+      <link>https://kkimsae.com/daily/kimchi-fridge-defrosting.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/kimchi-fridge-defrosting.html</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>김치냉장고 성에 제거는 제품 형태와 성에 상태에 따라 달라요. 삼성·LG 공식 안내로 두께별 관리 기준, 칸별 전원 확인, 자연해동 순서와 점검이 필요한 증상을 비교했습니다.</description>
+    </item>
     <item>
       <title>수능 귀마개, 매 교시 감독관 확인을 받아야 할까</title>
       <link>https://kkimsae.com/season/suneung-earplugs.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
       <category>일상</category>
       <description>꽃게를 통째로 찔 때와 탕에 넣을 때는 손질을 끝내는 단계가 달라요. 솔로 씻는 순서부터 등딱지·아가미·모래주머니 처리까지 요리에 맞춰 정리했어요.</description>
-    </item>
-    <item>
-      <title>화담숲 모노레일, 1구간·2구간·순환 어떻게 고를까</title>
-      <link>https://kkimsae.com/season/hwadam-forest-monorail.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/hwadam-forest-monorail.html</guid>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>화담숲 모노레일 1구간·2구간·순환의 요금과 탑승 시간, 내린 뒤 남는 도보 시간을 비교했어요. 부모님과 방문할 때 살펴볼 입석 운행과 중간 하차 후 재탑승 제한도 함께 확인해 보세요.</description>
     </item>
   </channel>
 </rss>
