@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "electric-blanket-disposal",
+      "category": "daily",
+      "date": "2026-10-09",
+      "title": "전기장판 버리기, 무료수거와 스티커 비용 확인하는 법",
+      "description": "전기장판 버리기는 지역별 품목과 수수료를 확인해야 해요. 구로구 면제 품목과 관악구 1인용 2,000원 사례로 전국 무상방문수거와의 차이, 신고·배출 순서를 정리했습니다.",
+      "tags": [
+        "전기장판 버리기",
+        "전기장판 폐기",
+        "전기장판 무료수거"
+      ],
+      "image": {
+        "src": "/img/electric-blanket-disposal-01.webp",
+        "w": 1200,
+        "h": 1200
+      }
+    },
+    {
       "slug": "kimchi-fridge-defrosting",
       "category": "daily",
       "date": "2026-10-08",

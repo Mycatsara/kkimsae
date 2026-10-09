@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 08 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>전기장판 버리기, 무료수거와 스티커 비용 확인하는 법</title>
+      <link>https://kkimsae.com/daily/electric-blanket-disposal.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/electric-blanket-disposal.html</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>전기장판 버리기는 지역별 품목과 수수료를 확인해야 해요. 구로구 면제 품목과 관악구 1인용 2,000원 사례로 전국 무상방문수거와의 차이, 신고·배출 순서를 정리했습니다.</description>
+    </item>
     <item>
       <title>김치냉장고 성에 제거, 뚜껑형·스탠드형은 어떻게 다를까</title>
       <link>https://kkimsae.com/daily/kimchi-fridge-defrosting.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>태추단감 수확시기를 찾고 있다면 품종의 일반 숙기와 판매처의 실제 출고일을 나눠 보세요. 주문 전 확인할 내용과 단감의 냉장 보관 방법을 정리했어요.</description>
-    </item>
-    <item>
-      <title>꽃게 손질법, 찜과 탕은 어디까지 다를까</title>
-      <link>https://kkimsae.com/daily/blue-crab-cleaning.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/daily/blue-crab-cleaning.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
-      <category>일상</category>
-      <description>꽃게를 통째로 찔 때와 탕에 넣을 때는 손질을 끝내는 단계가 달라요. 솔로 씻는 순서부터 등딱지·아가미·모래주머니 처리까지 요리에 맞춰 정리했어요.</description>
     </item>
   </channel>
 </rss>
