@@ -5,8 +5,16 @@
     <link>https://kkimsae.com/</link>
     <description>해마다 다시 찾는 답</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://kkimsae.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>귤 냉장보관, 적정 온도와 김치냉장고 설정법</title>
+      <link>https://kkimsae.com/daily/mandarin-refrigeration.html</link>
+      <guid isPermaLink="true">https://kkimsae.com/daily/mandarin-refrigeration.html</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+      <category>일상</category>
+      <description>귤 냉장보관은 저장 온도와 보관 모드를 함께 봐야 해요. 농촌진흥청의 3~5℃ 안내와 LG 김치냉장고 설정값을 비교하고, 상자 나누기·세척·곰팡이 처리까지 정리했습니다.</description>
+    </item>
     <item>
       <title>전기장판 버리기, 무료수거와 스티커 비용 확인하는 법</title>
       <link>https://kkimsae.com/daily/electric-blanket-disposal.html</link>
@@ -158,14 +166,6 @@
       <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
       <category>이맘때</category>
       <description>설악산 케이블카는 사전예약 없이 당일 현장에서 발권해요. 왕복요금과 가을 경로우대 제외 기간, 주차·유모차·하산 조건까지 출발 전에 확인해보세요.</description>
-    </item>
-    <item>
-      <title>태추단감 수확시기, 언제 사고 어떻게 보관할까</title>
-      <link>https://kkimsae.com/season/taishu-persimmon-season.html</link>
-      <guid isPermaLink="true">https://kkimsae.com/season/taishu-persimmon-season.html</guid>
-      <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
-      <category>이맘때</category>
-      <description>태추단감 수확시기를 찾고 있다면 품종의 일반 숙기와 판매처의 실제 출고일을 나눠 보세요. 주문 전 확인할 내용과 단감의 냉장 보관 방법을 정리했어요.</description>
     </item>
   </channel>
 </rss>

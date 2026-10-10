@@ -4,6 +4,23 @@
   "pageSize": 6,
   "posts": [
     {
+      "slug": "mandarin-refrigeration",
+      "category": "daily",
+      "date": "2026-10-10",
+      "title": "귤 냉장보관, 적정 온도와 김치냉장고 설정법",
+      "description": "귤 냉장보관은 저장 온도와 보관 모드를 함께 봐야 해요. 농촌진흥청의 3~5℃ 안내와 LG 김치냉장고 설정값을 비교하고, 상자 나누기·세척·곰팡이 처리까지 정리했습니다.",
+      "tags": [
+        "귤 냉장보관",
+        "귤 보관 온도",
+        "귤 김치냉장고 보관"
+      ],
+      "image": {
+        "src": "/img/mandarin-refrigeration-01.webp",
+        "w": 1100,
+        "h": 734
+      }
+    },
+    {
       "slug": "electric-blanket-disposal",
       "category": "daily",
       "date": "2026-10-09",
