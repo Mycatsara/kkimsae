@@ -42,7 +42,7 @@ test("글 0편: 홈·카테고리에 빈 안내, sitemap·feed 생성", () => {
   assert.equal(run(env, ["--check"]).code, 0);
 });
 
-test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테고리 우선, sitemap·feed 반영", () => {
+test("이전 글 3편: 이전 글 모음 최신순, 원래 분류·관련 글·sitemap·feed 유지", () => {
   const posts = [
     { slug: "old", category: "money", date: "2026-09-01", title: "옛 글", description: "d1", tags: [] },
     { slug: "new", category: "money", date: "2026-09-06", title: "새 글", description: "d2", tags: [], image: { src: "/img/new-01.webp", w: 1200, h: 675 } },
@@ -52,9 +52,9 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   posts.forEach((p) => writePost(root, p));
   const r = run(env);
   assert.equal(r.code, 0, r.out);
-  const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  const home = fs.readFileSync(path.join(root, "archive.html"), "utf8");
   const order = ["/money/new.html", "/game/g.html", "/money/old.html"].map((u) => home.indexOf(u));
-  assert.ok(order[0] < order[1] && order[1] < order[2], "홈은 최신순");
+  assert.ok(order[0] < order[1] && order[1] < order[2], "이전 글 모음은 최신순");
   assert.match(home, /<img class="thumb" src="\/img\/new-01.webp"/);
   const moneyAll = fs.readFileSync(path.join(root, "money/index.html"), "utf8");
   const money = moneyAll.slice(moneyAll.indexOf("AUTO:LIST:START"), moneyAll.indexOf("AUTO:LIST:END"));
@@ -70,19 +70,70 @@ test("글 3편: 홈 최신순, 카테고리 분리, 관련 글은 같은 카테�
   const feed = fs.readFileSync(path.join(root, "feed.xml"), "utf8");
   assert.match(feed, /<title>새 글<\/title>/);
   assert.ok(feed.indexOf("새 글") < feed.indexOf("게임 글"));
-  // 사이드바: 홈·카테고리·글 모두에 최근 글(3편 전부, 최대 4)과 카테고리 편수
-  for (const f of ["index.html", "game/index.html", "money/old.html"]) {
+  // 기존 분류와 글 사이드바에는 기존 글 수·관련 글을 보존한다.
+  for (const f of ["archive.html", "game/index.html", "money/old.html"]) {
     const s = fs.readFileSync(path.join(root, f), "utf8");
     const side = s.slice(s.indexOf("AUTO:SIDE:START"), s.indexOf("AUTO:SIDE:END"));
-    assert.match(side, /최근 글/); assert.equal((side.match(/<li><a href="\/(money|game)\/[a-z]+\.html">/g) || []).length, 3, f);
+    assert.match(side, /이전 글 최근 목록/); assert.equal((side.match(/<li><a href="\/(money|game)\/[a-z]+\.html">/g) || []).length, 3, f);
     assert.match(side, /경제·금융 <span class="n">\(2\)<\/span>/); assert.match(side, /게임 <span class="n">\(1\)<\/span>/);
   }
   const sj = JSON.parse(fs.readFileSync(path.join(root, "search.json"), "utf8"));
   assert.equal(sj.length, 3); assert.equal(sj[0].u, "/money/new.html"); assert.equal(sj[0].c, "경제·금융");
+  assert.ok(sj.every(p => p.scope === 'archive'));
+  const freshHome = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.match(freshHome, /첫 부동산 글을 준비/);
+  assert.doesNotMatch(freshHome, /\/money\/new.html|\/game\/g.html/);
   assert.ok(fs.existsSync(path.join(root, "search.html")));
   // 두 번째 실행은 변화 없음, --check 통과
   assert.match(run(env).out, /갱신된 파일 0개/);
   assert.equal(run(env, ["--check"]).code, 0);
+});
+
+test("부동산 글과 이전 글의 홈·관련 목록을 구분하고 본문·메타·날짜는 보존한다", () => {
+  const posts = [
+    { slug: 'old', category: 'daily', date: '2026-09-06', modified: '2026-09-10', title: '기존 김장 글', description: '보존 설명', tags: ['김장'] },
+    { slug: 'prices', category: 'prices', date: '2026-10-12', title: '동네 시세', description: '시세 설명', tags: [] },
+    { slug: 'apply', category: 'cheongyak', date: '2026-10-12', title: '청약 질문', description: '분양 설명', tags: [], related: ['old'] },
+    { slug: 'rail', category: 'development', date: '2026-10-11', title: '교통 계획', description: '교통 설명', tags: [] },
+  ];
+  const { root, env } = setup(posts);
+  posts.forEach(p => writePost(root, p));
+  const oldPath = path.join(root, 'daily/old.html');
+  const before = fs.readFileSync(oldPath, 'utf8').replace(/<header class="site">[\s\S]*?<\/header>/, '<header class="site">이전 메뉴</header>');
+  fs.writeFileSync(oldPath, before);
+  assert.equal(run(env).code, 0);
+  const after = fs.readFileSync(oldPath, 'utf8');
+  for (const re of [/<head>[\s\S]*?<\/head>/, /<div class="phead">[\s\S]*?<\/div>/, /<div class="body">[\s\S]*?<\/div>/]) {
+    assert.equal(after.match(re)[0], before.match(re)[0]);
+  }
+  assert.match(after, /집을 고르기 전, 알아둘 낌새/);
+  const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.match(home, /동네 시세/); assert.doesNotMatch(home, /기존 김장 글/);
+  for (const n of ['청약,분양', '집값,시세', '재개발,교통']) assert.ok(home.includes(n));
+  const archive = fs.readFileSync(path.join(root, 'archive.html'), 'utf8');
+  assert.match(archive, /기존 김장 글/); assert.doesNotMatch(archive, /동네 시세/);
+  const current = fs.readFileSync(path.join(root, 'cheongyak/apply.html'), 'utf8');
+  const next = current.slice(current.indexOf('AUTO:NEXT:START'), current.indexOf('AUTO:NEXT:END'));
+  assert.match(next, /동네 시세/); assert.match(next, /교통 계획/); assert.doesNotMatch(next, /기존 김장 글/);
+  const sj = JSON.parse(fs.readFileSync(path.join(root, 'search.json'), 'utf8'));
+  assert.equal(sj.filter(p => p.scope === 'realestate').length, 3);
+  assert.equal(sj.filter(p => p.scope === 'archive').length, 1);
+  assert.equal(run(env, ['--check']).code, 0);
+});
+
+test("쉼표가 있는 새 분류 3개를 publish --dry가 인식하고 파일은 생성하지 않는다", () => {
+  const { root, env } = setup([]);
+  const rows = [['청약,분양', 'cheongyak'], ['집값,시세', 'prices'], ['재개발,교통', 'development']];
+  const initial = fs.readFileSync(path.join(root, 'tools/posts.json'), 'utf8');
+  for (const [name, slug] of rows) {
+    const md = path.join(root, 'sample.md');
+    fs.writeFileSync(md, `---\ntitle: 테스트 원고\nslug: sample\ncategory: ${name}\ndescription: 분류 경로만 확인하는 격리된 시험 원고입니다. 실제 글을 만들거나 게시하지 않고 기존 등록 자료를 그대로 유지합니다.\n---\n본문`);
+    const out = execFileSync(NODE, [path.join(TOOLS, 'publish.js'), md, '--dry', '--date', '2026-10-12'], { env }).toString();
+    assert.ok(out.includes(`/${slug}/sample.html`));
+    assert.ok(out.includes(name));
+    assert.equal(fs.existsSync(path.join(root, slug, 'sample.html')), false);
+  }
+  assert.equal(fs.readFileSync(path.join(root, 'tools/posts.json'), 'utf8'), initial);
 });
 
 test("listBlock: 앞 4편은 사진 카드, 나머지는 번호 없는 제목 목록(data-page-size), 0편이면 빈 안내", () => {

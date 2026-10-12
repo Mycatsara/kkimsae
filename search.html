@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>검색 — 낌새</title>
-<meta name="description" content="낌새 글 검색">
+<meta name="description" content="청약·분양, 집값·시세, 재개발·교통 글과 이전 글을 찾아보세요.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://kkimsae.com/search.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="낌새">
 <meta property="og:title" content="검색">
-<meta property="og:description" content="낌새 글 검색">
+<meta property="og:description" content="청약·분양, 집값·시세, 재개발·교통 글과 이전 글을 찾아보세요.">
 <meta property="og:url" content="https://kkimsae.com/search.html">
 <meta property="og:image" content="https://kkimsae.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260928">
+<link rel="stylesheet" href="/assets/style.css?v=20261012">
 
 <script>
 (function(){
@@ -41,62 +41,48 @@
 <body>
 <div class="wrap">
 <header class="site">
-  <div class="brand"><a class="title" href="/">낌새</a><p class="desc">해마다 다시 찾는 답</p></div>
-  <nav class="menu" aria-label="주요 메뉴"><a href="/">홈</a><a href="/money/">경제·금융</a><a href="/season/">이맘때</a><a href="/game/">게임</a><a href="/daily/">일상</a><details class="dd"><summary>소개</summary><div class="dd-menu"><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/contact.html">연락</a></div></details></nav>
+  <div class="brand"><a class="title" href="/">낌새</a><p class="desc">집을 고르기 전, 알아둘 낌새</p></div>
+  <nav class="menu" aria-label="주요 메뉴"><a href="/">홈</a><a href="/cheongyak/">청약,분양</a><a href="/prices/">집값,시세</a><a href="/development/">재개발,교통</a><a href="/search.html?scope=realestate" class="on">검색</a><details class="dd"><summary>소개</summary><div class="dd-menu"><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/contact.html">연락</a></div></details></nav>
 </header>
 <div class="layout">
 <main>
 <div class="cathead"><h1 id="sq">검색</h1><p id="scount"></p></div>
+<form class="search search-tools" action="/search.html" method="get">
+<label class="sr" for="search-query">검색어</label><input id="search-query" type="search" name="q" placeholder="찾는 말을 입력하세요">
+<label class="sr" for="search-scope">검색 범위</label><select id="search-scope" name="scope"><option value="realestate">부동산 글</option><option value="all">전체 글</option></select><button type="submit">찾기</button>
+</form>
+<p class="search-help">전체 글을 선택하면 이전에 다룬 글도 함께 검색합니다.</p>
 <div class="cards" id="sres"></div>
-<script>
-(function(){
-  var q=(new URLSearchParams(location.search).get('q')||'').trim();
-  var h=document.getElementById('sq'),c=document.getElementById('scount'),box=document.getElementById('sres');
-  document.addEventListener('DOMContentLoaded',function(){var inp=document.querySelector('.side input[name=q]'); if(inp) inp.value=q;});
-  if(!q){h.textContent='검색';c.textContent='오른쪽 검색창에 찾는 말을 넣어 주세요.';return;}
-  h.textContent='"'+q+'" 검색 결과';
-  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
-  var fmt=function(d){var a=d.split('-');return a[0]+'년 '+Number(a[1])+'월 '+Number(a[2])+'일';};
-  fetch('/search.json').then(function(r){return r.json();}).then(function(list){
-    var words=q.toLowerCase().split(/\s+/).filter(Boolean);
-    var hit=list.filter(function(p){var t=(p.t+' '+p.d+' '+p.g+' '+p.c).toLowerCase();return words.every(function(w){return t.indexOf(w)>-1;});});
-    c.textContent=hit.length?hit.length+'편':'맞는 글이 없습니다. 다른 말로 찾아보세요.';
-    box.innerHTML=hit.map(function(p){return '<a class="card" href="'+esc(p.u)+'">'+(p.i?'<img class="thumb" src="'+esc(p.i)+'" alt="" loading="lazy">':'')+'<h2>'+esc(p.t)+'</h2><p class="meta"><time>'+fmt(p.dt)+'</time></p><p class="excerpt">'+esc(p.d)+'</p><span class="chip">'+esc(p.c)+'</span></a>';}).join('');
-  }).catch(function(){c.textContent='검색 자료를 불러오지 못했습니다.';});
-})();
-</script>
+<script src="/assets/search.js?v=20261012" defer></script>
 </main>
 <aside class="side">
 <!-- AUTO:SIDE:START -->
 <div class="widget">
   <h3>카테고리</h3>
   <ul class="cats">
-      <li><a href="/">전체 <span class="n">(68)</span></a></li>
-      <li><a href="/money/">경제·금융 <span class="n">(3)</span></a></li>
-      <li><a href="/season/">이맘때 <span class="n">(30)</span></a></li>
-      <li><a href="/game/">게임 <span class="n">(4)</span></a></li>
-      <li><a href="/daily/">일상 <span class="n">(31)</span></a></li>
+      <li><a href="/">부동산 글 전체 <span class="n">(0)</span></a></li>
+      <li><a href="/cheongyak/">청약,분양 <span class="n">(0)</span></a></li>
+      <li><a href="/prices/">집값,시세 <span class="n">(0)</span></a></li>
+      <li><a href="/development/">재개발,교통 <span class="n">(0)</span></a></li>
   </ul>
 </div>
 <div class="widget">
   <h3>검색</h3>
-  <form class="search" action="/search.html" method="get"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+  <form class="search" action="/search.html" method="get"><input type="hidden" name="scope" value="realestate"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+  <p class="search-help"><a href="/search.html?scope=all">이전 글을 포함해 전체 검색</a></p>
 </div>
 <div class="widget">
-  <h3>최근 글</h3>
+  <h3>최근 부동산 글</h3>
   <ul class="recent">
-      <li><a href="/daily/mandarin-refrigeration.html"><img src="/img/mandarin-refrigeration-01.webp" width="56" height="56" alt="" loading="lazy" decoding="async"><span><span class="t">귤 냉장보관, 적정 온도와 김치냉장고 설정법</span><span class="d">2026년 10월 10일</span></span></a></li>
-      <li><a href="/daily/electric-blanket-disposal.html"><img src="/img/electric-blanket-disposal-01.webp" width="56" height="56" alt="" loading="lazy" decoding="async"><span><span class="t">전기장판 버리기, 무료수거와 스티커 비용 확인하는 법</span><span class="d">2026년 10월 9일</span></span></a></li>
-      <li><a href="/daily/kimchi-fridge-defrosting.html"><img src="/img/kimchi-fridge-defrosting-01.webp" width="56" height="56" alt="" loading="lazy" decoding="async"><span><span class="t">김치냉장고 성에 제거, 뚜껑형·스탠드형은 어떻게 다를까</span><span class="d">2026년 10월 8일</span></span></a></li>
-      <li><a href="/season/suneung-earplugs.html"><img src="/img/suneung-earplugs-01.webp" width="56" height="56" alt="" loading="lazy" decoding="async"><span><span class="t">수능 귀마개, 매 교시 감독관 확인을 받아야 할까</span><span class="d">2026년 10월 7일</span></span></a></li>
+      <li class="none">아직 글이 없습니다</li>
   </ul>
 </div>
 <!-- AUTO:SIDE:END -->
 </aside>
 </div>
 <footer class="site">
-  <p class="copy foot-links"><a href="/about.html">소개</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/contact.html">연락</a></p>
-  <p class="copy">© 2026 낌새 · 해마다 다시 찾는 답</p>
+  <p class="copy foot-links"><a href="/archive.html">이전 글 모아보기</a> · <a href="/about.html">소개</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/contact.html">연락</a></p>
+  <p class="copy">© 2026 낌새 · 집을 고르기 전, 알아둘 낌새</p>
 </footer>
 </div>
 <script src="/site.js?v=20260906"></script>

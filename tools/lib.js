@@ -9,7 +9,8 @@ const SITE = {
   name: "낌새",
   host: "kkimsae.com",
   url: "https://kkimsae.com",
-  tagline: "해마다 다시 찾는 답",
+  tagline: "집을 고르기 전, 알아둘 낌새",
+  description: "어디에 살지, 언제 청약할지, 주변은 어떻게 달라질지. 청약·분양, 집값·시세, 재개발·교통 정보를 차근차근 살펴봅니다.",
   email: "ydj00383@naver.com",
   ga: "G-DMKX2LWWTB",
   google: "Um4UH--ivJ-Jy4bCHmzmd6xOOJ6AHSTpz61yAmZcy60",
@@ -18,13 +19,20 @@ const SITE = {
   lang: "ko",
 };
 
-// 카테고리 4개 — 폴더 이름(slug)이 주소가 된다: /money/글.html (9/6 운영자 결정: 이름은 낌새식으로, 주소는 유지)
-const CATS = [
+// 기존 글의 분류와 URL 폴더는 보존한다. 주요 메뉴에는 새 세 분류만 표시한다.
+const ARCHIVE_CATS = [
   { slug: "money", name: "경제·금융", desc: "지원금, 수당, 세금, 요금. 해마다 다시 계산하게 되는 것" },
   { slug: "season", name: "이맘때", desc: "설·추석, 수능, 세일, 신청 기간. 날짜가 정해져 있어 미리 준비하면 편한 것" },
   { slug: "game", name: "게임", desc: "정기 세일, 시즌 이벤트, 발매 일정. 놓치면 다음 해까지 기다려야 하는 것" },
   { slug: "daily", name: "일상", desc: "김장, 난방비, 환절기 준비, 대청소. 철이 바뀔 때마다 다시 찾게 되는 것" },
 ];
+const MAIN_CATS = [
+  { slug: "cheongyak", name: "청약,분양", desc: "청약 일정과 자격, 분양 조건을 확인합니다." },
+  { slug: "prices", name: "집값,시세", desc: "실거래가와 매물 가격, 동네별 시세를 살펴봅니다." },
+  { slug: "development", name: "재개발,교통", desc: "정비사업과 교통 계획, 진행 상황을 정리합니다." },
+];
+const CATS = [...ARCHIVE_CATS, ...MAIN_CATS];
+const isMain = p => MAIN_CATS.some(c => c.slug === (typeof p === "string" ? p : p.category));
 const catBySlug = (s) => CATS.find((c) => c.slug === s);
 const catByName = (n) => CATS.find((c) => c.name === n || c.slug === n);
 
@@ -163,7 +171,7 @@ function head({ title, description, url, image, type = "website", jsonld = [], n
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260928">
+<link rel="stylesheet" href="/assets/style.css?v=20261012">
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join("\n")}
 <script>
 (function(){
@@ -181,7 +189,7 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 // 머리: 왼쪽 제목·태그라인, 오른쪽 메뉴(카테고리 4 + "소개" 펼침 메뉴에 소개·개인정보처리방침·연락) — 9/6 운영자 요청(눈치 홈과 같은 배치)
 const INFO_PAGES = [{ href: "/about.html", slug: "about", name: "소개" }, { href: "/privacy.html", slug: "privacy", name: "개인정보처리방침" }, { href: "/contact.html", slug: "contact", name: "연락" }];
 function header(active = "") {
-  const cats = `<a href="/"${active === "home" ? ' class="on"' : ""}>홈</a>` + CATS.map((c) => `<a href="/${c.slug}/"${c.slug === active ? ' class="on"' : ""}>${c.name}</a>`).join("");
+  const cats = `<a href="/"${active === "home" ? ' class="on"' : ""}>홈</a>` + MAIN_CATS.map((c) => `<a href="/${c.slug}/"${c.slug === active ? ' class="on"' : ""}>${c.name}</a>`).join("") + `<a href="/search.html?scope=realestate"${active === "search" ? ' class="on"' : ""}>검색</a>`;
   const infoOn = INFO_PAGES.some((p) => p.slug === active);
   const info = `<details class="dd"${infoOn ? " open" : ""}><summary${infoOn ? ' class="on"' : ""}>소개</summary><div class="dd-menu">${INFO_PAGES.map((p) => `<a href="${p.href}"${p.slug === active ? ' class="on"' : ""}>${p.name}</a>`).join("")}</div></details>`;
   return `<header class="site">
@@ -193,7 +201,7 @@ function header(active = "") {
 function footer() {
   // 9/6 운영자 요청으로 링크를 머리 "소개" 펼침 메뉴로 옮겼다가, 2026-09-28 운영자 결정으로 바닥에 작은 글씨 한 줄을 되살림(애드센스 심사자가 찾기 쉽게)
   return `<footer class="site">
-  <p class="copy foot-links">${INFO_PAGES.map((p) => `<a href="${p.href}">${p.name}</a>`).join(" · ")}</p>
+  <p class="copy foot-links"><a href="/archive.html">이전 글 모아보기</a> · ${INFO_PAGES.map((p) => `<a href="${p.href}">${p.name}</a>`).join(" · ")}</p>
   <p class="copy">© 2026 ${SITE.name} · ${SITE.tagline}</p>
 </footer>`;
 }
@@ -219,12 +227,13 @@ function sidebarShell() {
 <!-- AUTO:SIDE:END -->
 </aside>`;
 }
-function sidebar(posts) {
+function sidebar(allPosts, archive = false) {
+  const posts = allPosts.filter(p => isMain(p) !== archive);
   const recent = posts.slice(0, 4).map((p) => `      <li><a href="${postUrl(p)}">${p.image ? `<img src="${esc(p.image.src)}" width="56" height="56" alt="" loading="lazy" decoding="async">` : `<span class="noimg"></span>`}<span><span class="t">${esc(p.title)}</span><span class="d">${fmtDate(p.date)}</span></span></a></li>`).join("\n");
-  const cats = CATS.map((c) => { const n = posts.filter((p) => p.category === c.slug).length; return `      <li><a href="/${c.slug}/">${esc(c.name)} <span class="n">(${n})</span></a></li>`; }).join("\n");
-  const all = `      <li><a href="/">전체 <span class="n">(${posts.length})</span></a></li>`; // 맨 위 전체(N) → 홈 (2026-09-09 운영자 요청, 4개 블로그 공통)
+  const cats = (archive ? ARCHIVE_CATS : MAIN_CATS).map((c) => { const n = posts.filter((p) => p.category === c.slug).length; return `      <li><a href="/${c.slug}/">${esc(c.name)} <span class="n">(${n})</span></a></li>`; }).join("\n");
+  const all = `      <li><a href="${archive ? '/archive.html' : '/'}">${archive ? '이전 글 전체' : '부동산 글 전체'} <span class="n">(${posts.length})</span></a></li>`;
   return `<div class="widget">
-  <h3>카테고리</h3>
+  <h3>${archive ? '이전 글 카테고리' : '카테고리'}</h3>
   <ul class="cats">
 ${all}
 ${cats}
@@ -232,10 +241,11 @@ ${cats}
 </div>
 <div class="widget">
   <h3>검색</h3>
-  <form class="search" action="/search.html" method="get"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+  <form class="search" action="/search.html" method="get"><input type="hidden" name="scope" value="${archive ? 'all' : 'realestate'}"><input type="search" name="q" placeholder="찾는 말" aria-label="검색어"><button type="submit">찾기</button></form>
+  <p class="search-help"><a href="/search.html?scope=all">이전 글을 포함해 전체 검색</a></p>
 </div>
 <div class="widget">
-  <h3>최근 글</h3>
+  <h3>${archive ? '이전 글 최근 목록' : '최근 부동산 글'}</h3>
   <ul class="recent">
 ${recent || '      <li class="none">아직 글이 없습니다</li>'}
   </ul>
@@ -328,4 +338,4 @@ ${footer()}
 `;
 }
 
-module.exports = { ROOT, SITE, CATS, INFO_PAGES, catBySlug, catByName, esc, read, write, exists, today, fmtDate, rfc822, parseFront, inline, mdToHtml, webpSize, head, header, footer, postUrl, card, nextBlock, sidebarShell, sidebar, postPage, pagePage };
+module.exports = { ROOT, SITE, CATS, MAIN_CATS, ARCHIVE_CATS, isMain, INFO_PAGES, catBySlug, catByName, esc, read, write, exists, today, fmtDate, rfc822, parseFront, inline, mdToHtml, webpSize, head, header, footer, postUrl, card, nextBlock, sidebarShell, sidebar, postPage, pagePage };

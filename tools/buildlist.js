@@ -6,7 +6,7 @@
 //   5) sitemap.xml · feed.xml · search.json: 전체 생성
 // 사용: node tools/buildlist.js          갱신
 //       node tools/buildlist.js --check  갱신할 게 남아 있으면 실패(pre-commit 훅용 — 생성물 안 커밋하는 사고 방지)
-// 규칙: AUTO 마커 사이만 바뀐다. 그 밖은 손대지 않는다.
+// 목록은 AUTO 마커 사이만 갱신한다. 공용 머리·바닥·CSS 버전도 맞추되 글 본문·메타·날짜는 보존한다.
 const fs = require("fs");
 const path = require("path");
 const L = require("./lib");
@@ -68,6 +68,7 @@ function loadPosts() {
 
 // 관련 글: 직접 지정(related) → 같은 카테고리 최신순 → 나머지 최신순
 function related(p, posts) {
+  posts = posts.filter(x => L.isMain(x) === L.isMain(p));
   const byS = (s) => posts.find((x) => x.slug === s);
   const picked = (p.related || []).map(byS).filter((x) => x && x.slug !== p.slug);
   const others = posts.filter((x) => x.slug !== p.slug && !picked.includes(x));
@@ -78,9 +79,10 @@ function related(p, posts) {
 
 function sitemap(posts) {
   const pages = [
-    { loc: "/", lastmod: posts[0] ? posts[0].modified || posts[0].date : L.today(), priority: "1.0" },
+    { loc: "/", lastmod: ["2026-10-12", ...posts.filter(L.isMain).map(p => p.modified || p.date)].sort().at(-1), priority: "1.0" },
+    { loc: "/archive.html", lastmod: "2026-10-12", priority: "0.4" },
     ...L.CATS.map((c) => { const latest = posts.find((p) => p.category === c.slug); return { loc: `/${c.slug}/`, lastmod: latest ? latest.modified || latest.date : L.today(), priority: "0.7" }; }),
-    { loc: "/about.html", lastmod: "2026-09-05", priority: "0.3" },
+    { loc: "/about.html", lastmod: "2026-10-12", priority: "0.3" },
     { loc: "/privacy.html", lastmod: "2026-09-05", priority: "0.1" },
     { loc: "/contact.html", lastmod: "2026-09-05", priority: "0.1" },
     ...posts.map((p) => ({ loc: L.postUrl(p), lastmod: p.modified || p.date, priority: "0.8" })),
@@ -119,31 +121,55 @@ ${items}
 
 const EMPTY = `<p class="empty">아직 글이 없습니다. 곧 채워집니다.</p>`;
 
+function homeBlock(posts, cfg) {
+  const current = posts.filter(L.isMain);
+  const latest = current.length ? listBlock(current.slice(0, 4), cfg) : `<div class="empty home-empty"><p>첫 부동산 글을 준비하고 있습니다.</p><p>아직 글이 없습니다. 이전에 쓴 글은 <a href="/archive.html">이전 글 모아보기</a>에서 읽을 수 있습니다.</p></div>`;
+  const topics = L.MAIN_CATS.map(c => {
+    const mine = current.filter(p => p.category === c.slug);
+    return `<section class="topic-card"><span class="topic-count">${mine.length}편</span><h3><a href="/${c.slug}/">${L.esc(c.name)}</a></h3><p>${L.esc(c.desc)}</p>${mine.length ? `<ul>${mine.slice(0, 3).map(p => `<li><a href="${L.postUrl(p)}">${L.esc(p.title)}</a></li>`).join('')}</ul>` : '<p class="topic-empty">새 글 준비 중</p>'}<a class="topic-link" href="/${c.slug}/">글 모아보기 →</a></section>`;
+  }).join('\n');
+  return `<section class="home-section"><div class="section-heading"><h2>최근 부동산 글</h2><span>${current.length}편</span></div>${latest}</section><section class="home-section"><div class="section-heading"><h2>관심 있는 주제부터</h2></div><div class="topic-grid">${topics}</div></section>`;
+}
+
+// 공통 머리·바닥과 CSS 버전만 갱신한다. 글의 제목·설명·JSON-LD, 본문,
+// 사진·출처, 게시/수정일과 기존 분류는 재생성하지 않는다.
+function refreshShell(file, active, check) {
+  const original = L.read(file);
+  const next = original.replace(/<header class="site">[\s\S]*?<\/header>/, () => L.header(active))
+    .replace(/<footer class="site">[\s\S]*?<\/footer>/, () => L.footer())
+    .replace(/\/assets\/style\.css\?v=[^"']+/g, '/assets/style.css?v=20261012');
+  return put(file, next, check);
+}
+
 function build({ check = false } = {}) {
   const posts = loadPosts();
   let changed = 0;
   const changedFiles = [];
   const mark = (f, did) => { if (did) { changed++; changedFiles.push(f); } };
 
-  const side = L.sidebar(posts);
+  const side = L.sidebar(posts), archiveSide = L.sidebar(posts, true);
   const cfg = posts.cfg || {};
-  mark("index.html", fill("index.html", "HOME", listBlock(posts, cfg), check));
+  mark("index.html", fill("index.html", "HOME", homeBlock(posts, cfg), check));
   mark("index.html", fill("index.html", "SIDE", side, check));
   if (L.exists("search.html")) mark("search.html", fill("search.html", "SIDE", side, check, true));
+  mark("archive.html", fill("archive.html", "ARCHIVE", listBlock(posts.filter(p => !L.isMain(p)), cfg), check));
+  mark("archive.html", fill("archive.html", "SIDE", archiveSide, check));
   for (const c of L.CATS) {
     const mine = posts.filter((p) => p.category === c.slug);
     mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "LIST", listBlock(mine, cfg), check));
-    mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "SIDE", side, check));
+    mark(`${c.slug}/index.html`, fill(`${c.slug}/index.html`, "SIDE", L.isMain(c.slug) ? side : archiveSide, check));
   }
   for (const p of posts) {
     const f = `${p.category}/${p.slug}.html`;
     mark(f, fill(f, "NEXT", L.nextBlock(related(p, posts)), check));
-    mark(f, fill(f, "SIDE", side, check, true));
+    mark(f, fill(f, "SIDE", L.isMain(p) ? side : archiveSide, check, true));
+    mark(f, refreshShell(f, p.category, check));
   }
+  for (const p of L.INFO_PAGES) if (L.exists(p.href.slice(1))) mark(p.href.slice(1), refreshShell(p.href.slice(1), p.slug, check));
   mark("sitemap.xml", put("sitemap.xml", sitemap(posts), check));
   mark("feed.xml", put("feed.xml", feed(posts), check));
   // 검색 페이지가 읽는 색인(제목·설명·태그·주소·날짜·카테고리)
-  mark("search.json", put("search.json", JSON.stringify(posts.map((p) => ({ t: p.title, d: p.description, g: (p.tags || []).join(" "), u: L.postUrl(p), dt: p.date, c: L.catBySlug(p.category).name, i: p.image ? p.image.src : "" }))) + "\n", check));
+  mark("search.json", put("search.json", JSON.stringify(posts.map((p) => ({ t: p.title, d: p.description, g: (p.tags || []).join(" "), u: L.postUrl(p), dt: p.date, c: L.catBySlug(p.category).name, scope: L.isMain(p) ? 'realestate' : 'archive', i: p.image ? p.image.src : "" }))) + "\n", check));
   return { posts: posts.length, changed, changedFiles };
 }
 
@@ -158,4 +184,4 @@ if (require.main === module) {
   } catch (e) { console.error("오류:", e.message); process.exit(1); }
 }
 
-module.exports = { build, related, sitemap, feed, loadPosts, listBlock };
+module.exports = { build, related, sitemap, feed, loadPosts, listBlock, homeBlock };
