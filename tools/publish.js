@@ -90,7 +90,9 @@ async function run() {
   }
 
   // 본문 변환 → 글 파일
-  const bodyHtml = L.mdToHtml(body, imageMap);
+  const estateDesign = ['cheongyak','prices','development'].includes(cat.slug);
+  const converted = L.mdToHtml(body, imageMap, { estateDesign });
+  const bodyHtml = estateDesign ? require('./estate-blocks.cjs').wrapEstateArticle(converted, 'kkimsae') : converted;
   const first = imgPlan[0] ? imageMap[imgPlan[0].key] : undefined;
   const post = { slug: front.slug, category: cat.slug, date, title: front.title, description: front.description, tags: front.tags };
   if (modified) post.modified = modified;

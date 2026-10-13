@@ -74,7 +74,7 @@ function inline(s) {
 
 // ---------- 본문 md → HTML ----------
 // imageMap: { "unemp-01.webp": { src:"/img/unemp-01.webp", w:1200, h:675 } } — 원고의 ![alt](img/unemp-01.webp)와 파일명으로 짝
-function mdToHtml(body, imageMap = {}) {
+function mdToHtml(body, imageMap = {}, { estateDesign = false } = {}) {
   const lines = body.replace(/\r\n/g, "\n").split("\n");
   const out = [];
   let para = [];
@@ -101,7 +101,7 @@ function mdToHtml(body, imageMap = {}) {
       out.push(`<figure class="fig${first ? " hero" : ""}"><img src="${img.src}" width="${img.w}" height="${img.h}" alt="${esc(m[1])}"${first ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">${cap}</figure>`);
       i++; continue;
     }
-    if (/^>/.test(t)) { flush(); const q = []; while (i < lines.length && /^>/.test(lines[i].trim())) { q.push(lines[i].trim().replace(/^>\s?/, "")); i++; } out.push(`<blockquote>${q.join("\n").split(/\n\s*\n/).map((p) => `<p>${inline(p.replace(/\n/g, " "))}</p>`).join("")}</blockquote>`); continue; }
+    if (/^>/.test(t)) { flush(); const q = []; while (i < lines.length && /^>/.test(lines[i].trim())) { q.push(lines[i].trim().replace(/^>\s?/, "")); i++; } const designed = estateDesign && require('./estate-blocks.cjs').renderEstateBlock(q, inline); out.push(designed || `<blockquote>${q.join("\n").split(/\n\s*\n/).map((p) => `<p>${inline(p.replace(/\n/g, " "))}</p>`).join("")}</blockquote>`); continue; }
     if (/^\|/.test(t)) {
       flush();
       const rows = [];
@@ -172,6 +172,7 @@ function head({ title, description, url, image, type = "website", jsonld = [], n
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css?v=20261012">
+<link rel="stylesheet" href="/assets/estate-article.css?v=20261013">
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join("\n")}
 <script>
 (function(){
